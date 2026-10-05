@@ -17,7 +17,7 @@ Replace `<name>` with the library name from the catalog. Imported source files, 
 
 Open a [GitHub Issue](https://github.com/LeszekKantorek/skills-library/issues/new/choose) with one or more skill links. Requests are reviewed and imported through pull requests.
 
-For requests containing multiple links, the issue records each outcome. Closing a linked pull request also closes the issue, whether or not the PR is merged. The issue form does not run an automatic importer.
+For requests containing multiple links, the issue records each outcome. Merging a linked pull request into `main` automatically closes the issue. Closing a PR without merging leaves the issue open. The issue form does not run an automatic importer.
 
 ## Risk
 
