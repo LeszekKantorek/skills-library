@@ -126,7 +126,8 @@ risk: "medium"
 - Include the issue, scope, risk, and validation results.
 - Keep the issue open and unlabeled until every item is resolved.
 - Then apply exactly one label and close:
-  - `imported`: at least one accepted item merged; list any rejected items.
+  - `imported`: all requested skills merged into main.
+  - `partial`: at least one requested skill merged into main and at least one rejected; list each outcome and rejection rationale.
   - `rejected`: all items rejected; preserve the rationale.
 - Use no other labels.
 

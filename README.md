@@ -18,10 +18,11 @@ Replace `<name>` with a name from the catalog.
 Open a [GitHub Issue](https://github.com/LeszekKantorek/skills-library/issues/new/choose) with one or more skill links. Requests are reviewed and imported through pull requests.
 
 - **No label:** pending or in progress.
-- **imported:** accepted skills have been merged.
+- **imported:** all requested skills have been merged into main.
+- **partial:** some requested skills have been merged into main; the rest were rejected.
 - **rejected:** the request was rejected in full.
 
-For requests containing multiple links, the issue records each outcome. The issue form does not run an automatic importer.
+Final labels are mutually exclusive and applied once every item is resolved. For requests containing multiple links, the issue records each outcome. The issue form does not run an automatic importer.
 
 ## Risk
 
