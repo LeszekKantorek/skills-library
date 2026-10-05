@@ -1,4 +1,4 @@
 # Skill catalog
 
-| Name | Original name | Description | Risk | npx |
-| --- | --- | --- | --- | --- |
+| Name | Original name | Description | Risk | License | npx |
+| --- | --- | --- | --- | --- | --- |
