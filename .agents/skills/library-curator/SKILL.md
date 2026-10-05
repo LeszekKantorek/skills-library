@@ -128,12 +128,10 @@ risk: "medium"
 ## 6. Submit and resolve
 
 - Use `import/<name>` and a PR to `main`; never bypass protection.
-- Include the issue, scope, risk, and validation results.
-- Keep the issue open and unlabeled until every item is resolved.
-- Then apply exactly one label and close:
-  - `imported`: all requested skills merged into main.
-  - `partial`: at least one requested skill merged into main and at least one rejected; list each outcome and rejection rationale.
-  - `rejected`: all items rejected; preserve the rationale.
-- Use no other labels.
+- Include the scope, risk, validation results, and `Closes #<issue-number>` for each issue handled by the PR. Verify the links in GitHub's Development section.
+- Use only `blocked` when an issue or PR has a problem; document the cause and what is needed to resolve it. Remove `blocked` when the problem is resolved. Do not apply any other label.
+- Record each skill's outcome and rejection rationale in the review and issue, without outcome labels.
+- Use GitHub's native closing references: merging the PR into `main` automatically closes its linked issues. Closing a PR without merging must leave those issues open; do not close them just because the PR was closed.
+- Link only issues handled by that PR; do not link unrelated work. If no PR is created, close the issue after recording the final decision.
 
 > Stay within the user's authorization for publication, comments, and repository settings. Do not start recurring imports without a request.
