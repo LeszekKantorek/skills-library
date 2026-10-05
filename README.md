@@ -2,7 +2,7 @@
 
 A library of AI skills installable with [`npx skills`](https://github.com/vercel-labs/skills).
 
-Browse [CATALOG.md](CATALOG.md) for skills, risk ratings, reviews, and installation commands. No skills have been imported yet.
+Browse [CATALOG.md](CATALOG.md) for skills, risk ratings, reviews, and installation commands.
 
 ## Installation
 
