@@ -11,6 +11,14 @@ description: Review, import, and update skills in skills-library through GitHub 
 - Read the issue, [catalog](../../../CATALOG.md), and existing `imports/<name>.md`.
 - Resolve each requested skill to an immutable source version.
 - Track multiple links separately; clarify ambiguous repository-wide requests.
+- Set `<name>` to `<owner>-<repository>-<skill>` for every import.
+  - Take owner and repository from the source GitHub URL; use the source skill directory name (or its original frontmatter name for a repository-root skill).
+  - Lowercase each component, replace runs of non-alphanumeric characters with `-`, trim edge hyphens, then join with `-`.
+  - Reuse this exact name in skill and review frontmatter, `skills/<name>/`, `imports/<name>.md`, the catalog, and the installation command.
+  - `CloudAI-X/claude-workflow-v2` + `designing-architecture` → `cloudai-x-claude-workflow-v2-designing-architecture`.
+  - `magnus919/agent-skills` + `api-design-and-evolution` → `magnus919-agent-skills-api-design-and-evolution`.
+
+> This naming rule applies to imported skills; keep the repository's own `library-curator` name. If source identity is missing or the resulting name collides with a different skill, clarify instead of inventing a name or overwriting files.
 
 ## 2. Inspect the source
 
@@ -46,7 +54,7 @@ description: Review, import, and update skills in skills-library through GitHub 
 ```markdown
 ---
 link: "https://github.com/OWNER/REPO/tree/FULL_SHA/path/to/skill"
-name: "local-skill-name"
+name: "<owner>-<repository>-<skill>"
 sha: "FULL_SOURCE_COMMIT_SHA"
 commit: "https://github.com/OWNER/REPO/commit/FULL_SHA"
 risk: "medium"
@@ -77,8 +85,7 @@ risk: "medium"
 
 - For accepted imports:
   - Copy required files to `skills/<name>/`.
-  - Use lowercase letters, digits, and hyphens; match frontmatter `name`.
-  - Prefix name collisions with the source; preserve the original name in the review.
+  - Set frontmatter `name` to the full name from step 1; preserve the original name in the review and catalog.
   - Add a catalog row:
 
 ```markdown
