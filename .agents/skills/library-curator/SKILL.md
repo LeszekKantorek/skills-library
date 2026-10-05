@@ -122,7 +122,7 @@ risk: "medium"
 
 ## 6. Submit and resolve
 
-- Use `codex/<description>` and a PR to `main`; never bypass protection.
+- Use `import/<name>` and a PR to `main`; never bypass protection.
 - Include the issue, scope, risk, and validation results.
 - Keep the issue open and unlabeled until every item is resolved.
 - Then apply exactly one label and close:
