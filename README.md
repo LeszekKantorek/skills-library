@@ -8,10 +8,10 @@ Browse [CATALOG.md](CATALOG.md) for skills, risk ratings, reviews, and installat
 
 ```sh
 npx skills add LeszekKantorek/skills-library --list
-npx skills add LeszekKantorek/skills-library --skill <name>
+npx skills add https://github.com/LeszekKantorek/skills-library/tree/main/skills/<name>
 ```
 
-Replace `<name>` with a name from the catalog.
+Replace `<name>` with the library name from the catalog. Imported source files, including their original skill names and references, are preserved unchanged; applicable license files are included in each package.
 
 ## Request an import
 
