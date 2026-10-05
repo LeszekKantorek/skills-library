@@ -1,6 +1,6 @@
-# Katalog skilli
+# Skill catalog
 
-Brak importów. Oceny `Risk` są zdefiniowane w [README.md](README.md#risk), a ustalenia dla każdej wersji znajdują się w `imports/<name>.md`.
+No imports yet. Risk ratings are defined in [README.md](README.md#risk); findings for each version belong in `imports/<name>.md`.
 
 | Name | Original name | Description | Risk | npx |
 | --- | --- | --- | --- | --- |

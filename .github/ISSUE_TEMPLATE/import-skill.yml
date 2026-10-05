@@ -1,17 +1,17 @@
 name: Import skill
-description: Zgłoś jeden lub więcej skilli do analizy i importu.
+description: Request review and import of one or more skills.
 title: "Import: "
 body:
   - type: textarea
     id: links
     attributes:
-      label: Linki do skilli
-      description: Jeden link w wierszu. Preferuj konkretny katalog skilla i wersję źródła.
+      label: Skill links
+      description: One link per line. Prefer a specific skill directory and source version.
       placeholder: https://github.com/owner/repo/tree/main/skills/skill-name
     validations:
       required: true
   - type: textarea
     id: context
     attributes:
-      label: Zastosowanie i uwagi
-      description: Opcjonalnie podaj zastosowanie, preferowaną nazwę lub znane ograniczenia.
+      label: Use case and notes
+      description: Optionally describe the use case, preferred name, or known limitations.

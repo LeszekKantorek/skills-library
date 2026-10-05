@@ -1,54 +1,55 @@
 # skills-library
 
-Biblioteka skilli AI instalowanych przez [`npx skills`](https://github.com/vercel-labs/skills). Dostępne skille i ich oceny znajdziesz w [CATALOG.md](CATALOG.md).
+A library of AI skills installable with [`npx skills`](https://github.com/vercel-labs/skills). See [CATALOG.md](CATALOG.md) for available skills and their risk ratings.
 
-## Instalacja
+## Installation
 
 ```sh
 npx skills add LeszekKantorek/skills-library --list
 npx skills add LeszekKantorek/skills-library --skill <name>
 ```
 
-`<name>` to nazwa z katalogu. Biblioteka na starcie nie zawiera importowanych skilli. Własny `library-curator` służy do utrzymania tego repozytorium i nie jest wpisem katalogu importów.
+Replace `<name>` with a name from the catalog. The library initially contains no imported skills. The local `library-curator` skill maintains this repository and is not listed in the import catalog.
 
-## Struktura
+## Structure
 
 ```text
-.agents/skills/library-curator/SKILL.md  # instrukcje dla opiekuna biblioteki
-skills/<name>/SKILL.md                  # importowany skill i jego zasoby
-imports/<name>.md                      # techniczne review importu
+.agents/skills/library-curator/SKILL.md  # instructions for the library maintainer
+skills/<name>/SKILL.md                  # imported skill and its resources
+imports/<name>.md                      # technical import review
 README.md
 CATALOG.md
 ```
 
-## Import przez GitHub Issue
+## Import through a GitHub Issue
 
-1. Utwórz issue przez formularz „Import skill” i podaj jeden lub więcej linków.
-2. Opiekun rozwiązuje linki do konkretnych wersji, sprawdza treść, zasoby, zależności i możliwość redystrybucji. Samo zgłoszenie linku nie uruchamia obcego kodu.
-3. Import trafia do PR razem z review w `imports/` i wpisem w katalogu. Aktualizacja istniejącego skilla także wymaga issue, nowej oceny i PR.
-4. Po scaleniu wszystkich zaakceptowanych pozycji oznacz issue `imported` i zamknij. Całkowicie odrzucone zgłoszenie oznacz `rejected` i zamknij, zachowując uzasadnienie.
+1. Open an issue using the "Import skill" form and provide one or more links.
+2. The maintainer resolves each link to a specific version and reviews its content, resources, dependencies, and redistribution terms. Submitting a link does not execute external code.
+3. The import is submitted as a PR together with a review in `imports/` and a catalog entry. Updates to existing skills also require an issue, a new assessment, and a PR.
+4. After all accepted items have been merged, label the issue `imported` and close it. Label a fully rejected request `rejected` and close it, preserving the rationale.
 
-Jedynymi etykietami repozytorium są `imported` i `rejected`; są wzajemnie wykluczające. Brak etykiety oznacza otwarte zgłoszenie oczekujące lub w trakcie pracy — nie tworzymy etykiety `open`. Przy wielu linkach śledź wynik każdego z nich w issue. Jeśli tylko część zostanie odrzucona, po zakończeniu wszystkich pozycji użyj `imported` i wskaż odrzucone pozycje w podsumowaniu. Do tego czasu issue pozostaje otwarte bez etykiety.
+The repository has only two labels: `imported` and `rejected`. They are mutually exclusive. An unlabeled issue is open and pending or in progress; there is no `open` label. For multiple links, track each outcome in the issue. If some items are rejected, use `imported` once all items are resolved and identify the rejected items in the summary. Until then, keep the issue open and unlabeled.
 
-Issue jest kolejką dla opiekuna; formularz nie uruchamia automatycznego importu. Etykiety opisują wynik, a nie poziom ryzyka.
+Issues are a work queue for the maintainer; the form does not run an automatic importer. Labels describe outcomes, not risk levels.
 
 ## Risk
 
-Ocena dotyczy konkretnej wersji oraz jej instrukcji, dołączonego kodu i zależności. Uwzględnia też działania, do których skill nakłania agenta, nawet gdy nie zawiera skryptów. Wybierz najwyższy uzasadniony poziom i opisz konkretny powód w review.
+Every assessment must assign exactly one of `low`, `medium`, `high`, or `critical`. The rating applies to a specific version, including its instructions, bundled code, and dependencies. Assess actions the skill tells an agent to perform even when it contains no scripts. Choose the highest applicable level and explain the concrete reasons in the review.
 
-| Risk | Kryteria i przykłady | Decyzja importowa |
+| Risk | Criteria and examples | Import decision |
 | --- | --- | --- |
-| `low` | Instrukcje i lokalny odczyt; brak wykonywania kodu, wysyłania danych i zmian zewnętrznych. | Możliwy po review. |
-| `medium` | Ograniczone, odwracalne zapisy lokalne lub przejrzyste skrypty/zależności; odczyt sieci bez przekazywania prywatnych danych. | Możliwy po opisaniu zakresu i zależności. |
-| `high` | Dostęp do sekretów, wysyłanie danych, publikacja, modyfikacja usług, usuwanie danych lub szerokie uprawnienia. | Wymaga udokumentowanej akceptacji opiekuna dla tej wersji w PR i jasno opisanych zabezpieczeń. |
-| `critical` | Wykradanie danych, ukryte destrukcyjne działania, złośliwe instrukcje lub obchodzenie zabezpieczeń. | Odrzuć; nie umieszczaj plików w `skills/`. |
-| `unknown` | Nie udało się zbadać istotnych plików, zależności lub zachowania. To brak oceny, nie niski poziom. | Wstrzymaj import do wyjaśnienia; przy odmowie zakończ jako `rejected`. |
+| `low` | Instructions and local reads; no code execution, data transmission, or external changes. | Eligible after review. |
+| `medium` | Limited, reversible local writes or transparent scripts/dependencies; network reads without transmitting private data. | Eligible after documenting scope and dependencies. |
+| `high` | Access to secrets, data transmission, publishing, service changes, deletion, broad permissions, or material gaps in the assessment. | Requires documented maintainer acceptance for that version in the PR and clear safeguards. Material assessment gaps must be resolved before import. |
+| `critical` | Data theft, hidden destructive actions, malicious instructions, or bypassing security safeguards. | Reject; do not add files to `skills/`. |
 
-Ocena nie jest gwarancją bezpieczeństwa. Brak prawa do redystrybucji blokuje import niezależnie od `risk`; zapisz go jako osobne ustalenie, bez automatycznego podnoszenia poziomu.
+When important files, dependencies, or behavior cannot be inspected, assign `high`, document the missing evidence, and hold the import until the gaps are resolved. Use `critical` if the available evidence already meets its criteria. Reassess once new evidence is available; never leave the rating blank or create a fifth risk value.
 
-## Review importu
+A rating is not a safety guarantee. Missing redistribution permission blocks import regardless of `risk`; record it as a separate finding rather than automatically increasing the rating.
 
-Każdy import i jego aktualizacja mają `imports/<name>.md`. Pełny SHA i link do commita źródłowego wskazują dokładnie ocenioną wersję; nie wpisuj tutaj przyszłego commita biblioteki. Historia review pozostaje w Git.
+## Import review
+
+Each import and update has an `imports/<name>.md` review. The full SHA and source commit link identify the exact version reviewed; do not put a future library commit here. Git preserves the review history.
 
 ```yaml
 ---
@@ -60,10 +61,10 @@ risk: "medium"
 ---
 ```
 
-Pod frontmatter opisz: issue, oryginalną nazwę, pochodzenie i licencję, sprawdzone pliki, zachowanie i uprawnienia, sieć i przepływ danych, zależności, uzasadnienie ryzyka, zmiany względem oryginału, wykonane sprawdzenia i ograniczenia oraz decyzję. Nie deklaruj testów, których nie wykonano.
+Below the frontmatter, document the issue, original name, provenance and license, inspected files, behavior and permissions, network access and data flows, dependencies, risk rationale, modifications from the original, checks performed and their limitations, and the decision. Do not claim tests that were not run.
 
-Dla źródła bez Git ustaw `sha` i `commit` na `null`, podaj stabilny link w `link` oraz sumę SHA-256 pobranego artefaktu w treści review. Bez identyfikowalnej kopii źródła wstrzymaj import. Dla odrzuconego skilla zachowaj review, ale nie twórz wpisu w katalogu ani katalogu w `skills/`.
+For sources without Git, set `sha` and `commit` to `null`, provide a stable `link`, and record the downloaded artifact's SHA-256 in the review body. Hold imports without an identifiable source snapshot. Preserve reviews for rejected skills, but do not create a catalog entry or a directory in `skills/` for them.
 
-## Zmiany w bibliotece
+## Library changes
 
-Docelowa konfiguracja `main`: wymagany PR, ochrona także administratorów, wyłączony force push i usuwanie gałęzi. Sam wymóg PR nie oznacza wymogu akceptacji drugiej osoby; pozwala to utrzymywać bibliotekę jednoosobowo. Pierwszy commit pustego repozytorium tworzy gałąź bazową, a dalsze zmiany przechodzą przez PR.
+The `main` protection policy requires a PR, applies to administrators, and disables force pushes and branch deletion. Requiring a PR does not require another person's approval, allowing a single maintainer to operate the library. The first commit initializes the empty repository's base branch; subsequent changes go through PRs.
