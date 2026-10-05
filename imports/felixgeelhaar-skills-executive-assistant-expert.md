@@ -1,6 +1,6 @@
 ---
 link: "https://github.com/felixgeelhaar/skills/tree/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447/executive-assistant-expert"
-name: "executive-assistant-expert"
+name: "felixgeelhaar-skills-executive-assistant-expert"
 sha: "5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447"
 commit: "https://github.com/felixgeelhaar/skills/commit/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447"
 risk: "high"
@@ -10,7 +10,7 @@ risk: "high"
 - Issue: [#2](https://github.com/LeszekKantorek/skills-library/issues/2).
 - Original name: `executive-assistant-expert`.
 - Source package: `executive-assistant-expert/SKILL.md`, blob `acbce1ace27c1bec055bee599774b557264c2830`.
-- Source identity: `felixgeelhaar-skills-executive-assistant-expert`. Package name, directory and frontmatter intentionally retain the original name at the maintainer's explicit instruction; this overrides the curator's normal namespacing rule.
+- Source identity: `felixgeelhaar-skills-executive-assistant-expert`. The package directory and review identity use the library's namespaced name. SKILL.md frontmatter and companion references retain the original names at the maintainer's explicit instruction; only the curator's file-content renaming requirement is overridden.
 - Source version: immutable commit `5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447`.
 
 ## License review
@@ -19,7 +19,7 @@ risk: "high"
 - Scope and file-specific exceptions: repository MIT license covers the single Markdown file; the complete source tree contains no per-skill license, COPYING file, scripts, assets or separate dependency material. No different file-level license notice was identified. Named books, frameworks and quotations remain attributed in the unchanged file; this review does not independently clear rights in every referenced third-party quotation.
 - Redistribution and modification permissions: MIT expressly permits copying, modification and redistribution; no modification of the skill file is performed.
 - Required notices and other obligations: retain the copyright notice (2024–2026 Felix Geelhaar), MIT permission notice and disclaimer in copies/substantial portions. No source-sharing obligation.
-- Preserved license/attribution files and compliance actions: the complete, unmodified repository LICENSE is copied to `skills/executive-assistant-expert/LICENSE`; source attributions inside SKILL.md are preserved.
+- Preserved license/attribution files and compliance actions: the complete, unmodified repository LICENSE is copied to `skills/felixgeelhaar-skills-executive-assistant-expert/LICENSE`; source attributions inside SKILL.md are preserved.
 - Unresolved questions or blockers: no conflicting license or redistribution restriction identified in the supplied package.
 
 ## Findings
@@ -31,6 +31,6 @@ risk: "high"
 - Risk rationale and assessment gaps: high due to sensitive inbox/calendar context and recommended external deletion, response and meeting cancellation actions. Static review does not establish runtime safety, factual accuracy or host-specific connector behavior. No executable code was run, secrets provided, account data accessed or external workflow enacted.
 
 ## Import result
-- Changes from source: none to SKILL.md. Source name, description, allowed-tools, body, companion references and wording remain unchanged. The sole package addition is an exact copy of the source repository LICENSE.
-- Checks performed and limitations: verified 32 requested directories each contain one regular SKILL.md, with no symlinks, additional resources or scripts; checked original frontmatter names, package/review/catalog consistency and all companion names against the batch; reviewed Markdown references and preserved source license. Original blob identities are checked in the prepared Git tree. No agent execution, npx installation or domain-quality tests were performed; local execution tools were unavailable.
+- Changes from source: none to SKILL.md. Source name, description, allowed-tools, body, companion references and wording remain unchanged. The destination directory is namespaced; installation selects the original frontmatter name. The sole package addition is an exact copy of the source repository LICENSE.
+- Checks performed and limitations: verified 32 requested directories each contain one regular SKILL.md, with no symlinks, additional resources or scripts; checked original frontmatter names, namespaced package/review/catalog identities and all original companion names against the batch; reviewed Markdown references and preserved source license. Original blob identities are checked in the prepared Git tree. No agent execution, npx installation or domain-quality tests were performed; local execution tools were unavailable.
 - Decision and blockers: prepared for import in the PR; maintainer acceptance of this high-risk package is still required before merge. Suggested safeguards: least-privilege host tooling, no secrets in research queries, scope account access to the task and review proposed inbox/calendar changes before applying them; external sends, deletions and calendar changes require explicit user authorization of the relevant action. Installation does not itself grant external-action permission.
