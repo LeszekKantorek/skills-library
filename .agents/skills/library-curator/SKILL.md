@@ -131,7 +131,7 @@ risk: "medium"
 - Include the scope, risk, validation results, and `Closes #<issue-number>` for each issue handled by the PR. Verify the links in GitHub's Development section.
 - Use only `blocked` when an issue or PR has a problem; document the cause and what is needed to resolve it. Remove `blocked` when the problem is resolved. Do not apply any other label.
 - Record each skill's outcome and rejection rationale in the review and issue, without outcome labels.
-- Closing a PR, with or without merging, closes its linked issues through `.github/workflows/close-linked-issues.yml`. Closure does not mean the skills were imported; use the merge state and review to report the outcome.
+- Use GitHub's native closing references: merging the PR into `main` automatically closes its linked issues. Closing a PR without merging must leave those issues open; do not close them just because the PR was closed.
 - Link only issues handled by that PR; do not link unrelated work. If no PR is created, close the issue after recording the final decision.
 
 > Stay within the user's authorization for publication, comments, and repository settings. Do not start recurring imports without a request.
