@@ -1,0 +1,17 @@
+name: Import skill
+description: Zgłoś jeden lub więcej skilli do analizy i importu.
+title: "Import: "
+body:
+  - type: textarea
+    id: links
+    attributes:
+      label: Linki do skilli
+      description: Jeden link w wierszu. Preferuj konkretny katalog skilla i wersję źródła.
+      placeholder: https://github.com/owner/repo/tree/main/skills/skill-name
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Zastosowanie i uwagi
+      description: Opcjonalnie podaj zastosowanie, preferowaną nazwę lub znane ograniczenia.
