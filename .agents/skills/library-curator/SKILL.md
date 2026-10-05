@@ -14,7 +14,7 @@ description: Review, import, and update skills in skills-library through GitHub 
 - Set `<name>` to `<owner>-<repository>-<skill>` for every import.
   - Take owner and repository from the source GitHub URL; use the source skill directory name (or its original frontmatter name for a repository-root skill).
   - Lowercase each component, replace runs of non-alphanumeric characters with `-`, trim edge hyphens, then join with `-`.
-  - Reuse this exact name in skill and review frontmatter, `skills/<name>/`, `imports/<name>.md`, the catalog, and the installation command.
+  - Use this library name only in review frontmatter, `skills/<name>/`, `imports/<name>.md`, the catalog, and the installation URL. Keep the source skill's frontmatter name unchanged.
   - `CloudAI-X/claude-workflow-v2` + `designing-architecture` → `cloudai-x-claude-workflow-v2-designing-architecture`.
   - `magnus919/agent-skills` + `api-design-and-evolution` → `magnus919-agent-skills-api-design-and-evolution`.
 
@@ -35,7 +35,7 @@ description: Review, import, and update skills in skills-library through GitHub 
 - Inspect the skill's `LICENSE`, `COPYING`, and file headers first.
 - Check the repository license and its scope where no skill-specific terms apply.
 - Check bundled scripts, assets, and third-party material for separate terms or exceptions.
-- Verify permission to redistribute and modify the imported files, including renaming.
+- Verify permission to redistribute the unchanged files under the library's containing directory.
   - Identify required copyright notices, attribution, license copies, change notices, and any source-sharing obligations.
   - Preserve applicable license files and notices inside the imported package, including repository-level notices that cover it.
 - Record the license identifier (SPDX when available), source evidence, scope, obligations, and how they are fulfilled in the review.
@@ -80,7 +80,7 @@ risk: "medium"
 - License identifier(s):
 - Evidence links (pinned to the source commit):
 - Scope and file-specific exceptions:
-- Redistribution and modification permissions:
+- Redistribution permissions:
 - Required notices and other obligations:
 - Preserved license/attribution files and compliance actions:
 - Unresolved questions or blockers:
@@ -92,7 +92,8 @@ risk: "medium"
 - Risk rationale and assessment gaps:
 
 ## Import result
-- Changes from source:
+- Source file integrity (byte comparison or SHA-256 results):
+- Added license/attribution files and their provenance:
 - Checks performed and limitations:
 - Decision and blockers:
 ```
@@ -105,19 +106,23 @@ risk: "medium"
 ## 5. Prepare and verify files
 
 - For accepted imports:
-  - Copy required files to `skills/<name>/`.
-  - Set frontmatter `name` to the full name from step 1; preserve the original name in the review and catalog.
+  - Copy the complete skill package to `skills/<name>/`, preserving every original file byte-for-byte and its relative path.
+  - Do not edit frontmatter, names, cross-skill references, links, instructions, code, formatting, encoding, or line endings. Do not translate, repair, or adapt source files.
+  - Preserve existing license/attribution files and add exact copies of applicable source license/notice files to every package where missing; never overwrite original files. Record any additional files separately in the review.
+  - Keep findings, risk ratings, source metadata, and compatibility limitations in `imports/<name>.md` and the catalog, outside original files.
   - Set `License` to the verified identifier (for example, `MIT`), linked to the review's license section. List applicable licenses for mixed packages; use `Custom` for verified nonstandard terms. Do not guess or reduce mixed terms to the repository license.
   - Add a catalog row:
 
 ```markdown
 | Name | Original name | Description | Risk | License | npx |
 | --- | --- | --- | --- | --- | --- |
-| [<name>](skills/<name>/SKILL.md) | <original> | <description> | [<risk>](imports/<name>.md) | [<license>](imports/<name>.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill <name>` |
+| [<name>](skills/<name>/SKILL.md) | <original> | <description> | [<risk>](imports/<name>.md) | [<license>](imports/<name>.md#license-review) | `npx skills add https://github.com/LeszekKantorek/skills-library/tree/main/skills/<name>` |
 ```
 
 - Keep rejected or blocked skills out of `skills/` and the catalog.
-- Check frontmatter, local links, dependencies, licenses, and catalog/review consistency.
+- Verify imported source files against the pinned snapshot using byte comparisons or SHA-256, including the complete file list. Distinguish added license/notice copies from original files; prevent Git line-ending conversion from changing committed bytes.
+- Check frontmatter, links, dependencies, licenses, and catalog/review consistency without modifying source files. Report broken references, duplicate original names, or installation limitations; hold imports that cannot work unchanged rather than silently fixing them.
+- Use the direct package URL for installation; the library slug is not the original frontmatter name.
 - Test code only after inspection, in a restricted environment without real secrets; report only checks actually run.
 
 ## 6. Submit and resolve
