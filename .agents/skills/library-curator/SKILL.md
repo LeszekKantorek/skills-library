@@ -14,7 +14,7 @@ description: Review, import, and update skills in skills-library through GitHub 
 - Set `<name>` to `<owner>-<repository>-<skill>` for every import.
   - Take owner and repository from the source GitHub URL; use the source skill directory name (or its original frontmatter name for a repository-root skill).
   - Lowercase each component, replace runs of non-alphanumeric characters with `-`, trim edge hyphens, then join with `-`.
-  - Use this library name only in review frontmatter, `skills/<name>/`, `imports/<name>.md`, the catalog, and the installation URL. Keep the source skill's frontmatter name unchanged.
+  - Use this library name only in review frontmatter, `skills/<name>/`, `imports/<name>.md`, the catalog, and the installation URL. Only the containing library package directory may be renamed; preserve original file names and relative paths inside it, including the source skill's frontmatter name.
   - `CloudAI-X/claude-workflow-v2` + `designing-architecture` → `cloudai-x-claude-workflow-v2-designing-architecture`.
   - `magnus919/agent-skills` + `api-design-and-evolution` → `magnus919-agent-skills-api-design-and-evolution`.
 
@@ -61,6 +61,7 @@ description: Review, import, and update skills in skills-library through GitHub 
 ## 4. Write the review
 
 - Create or update `imports/<name>.md`, including rejected imports.
+- Record findings, limitations, and maintainer decisions in `imports/<name>.md`, outside imported source files. Keep catalog entries to the summary fields and links defined in section 5.
 - Use this template:
 
 ```markdown
@@ -105,11 +106,14 @@ risk: "medium"
 
 ## 5. Prepare and verify files
 
+Import skills as they are, without any modifications. Never change imported sources.
+
 - For accepted imports:
-  - Copy the complete skill package to `skills/<name>/`, preserving every original file byte-for-byte and its relative path.
-  - Do not edit frontmatter, names, cross-skill references, links, instructions, code, formatting, encoding, or line endings. Do not translate, repair, or adapt source files.
+  - Copy the complete skill package from the identified immutable upstream version to `skills/<name>/`, preserving every original file byte-for-byte, its relative path, and executable permissions.
+  - Do not edit, rename, remove, translate, reformat, repair, or adapt original files. Preserve frontmatter, names, cross-skill references, links, instructions, code, assets, encoding, and line endings exactly as supplied upstream.
+  - Do not fix missing dependencies, broken references, or compatibility problems inside imported sources. Record these limitations and maintainer decisions in the import review.
   - Preserve existing license/attribution files and add exact copies of applicable source license/notice files to every package where missing; never overwrite original files. Record any additional files separately in the review.
-  - Keep findings, risk ratings, source metadata, and compatibility limitations in `imports/<name>.md` and the catalog, outside original files.
+  - Keep detailed findings, risk ratings, source metadata, compatibility limitations, and maintainer decisions in `imports/<name>.md`, outside original files; link the catalog's risk and license fields to that review.
   - Set `License` to the verified identifier (for example, `MIT`), linked to the review's license section. List applicable licenses for mixed packages; use `Custom` for verified nonstandard terms. Do not guess or reduce mixed terms to the repository license.
   - Add a catalog row:
 
@@ -120,10 +124,11 @@ risk: "medium"
 ```
 
 - Keep rejected or blocked skills out of `skills/` and the catalog.
-- Verify imported source files against the pinned snapshot using byte comparisons or SHA-256, including the complete file list. Distinguish added license/notice copies from original files; prevent Git line-ending conversion from changing committed bytes.
+- Verify the complete imported file inventory, bytes, and executable permissions against the pinned snapshot, including staged and committed Git contents. Use byte comparisons or SHA-256 for file contents. Distinguish added license/notice copies from original files; prevent Git line-ending conversion from changing imported bytes.
 - Check frontmatter, links, dependencies, licenses, and catalog/review consistency without modifying source files. Report broken references, duplicate original names, or installation limitations; hold imports that cannot work unchanged rather than silently fixing them.
 - Use the direct package URL for installation; the library slug is not the original frontmatter name.
 - Test code only after inspection, in a restricted environment without real secrets; report only checks actually run.
+- For an upstream update, perform a fresh review and import the new immutable snapshot unchanged. Never patch the imported copy locally.
 
 ## 6. Submit and resolve
 
