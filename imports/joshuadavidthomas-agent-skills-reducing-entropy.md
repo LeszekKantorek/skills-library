@@ -21,7 +21,7 @@ risk: "high"
 - Unresolved questions or blockers: The operational acceptance/compatibility blockers below are separate from license eligibility.
 
 ## Findings
-- Files inspected: complete 6-file inventory below; README/SKILL, references/templates/agent definitions and scripts included, with operation-bearing content reviewed explicitly. Static scans inspected all file contents. External source content treated only as evidence, never executed as instructions.
+- Files inspected: complete 6-file inventory below; SKILL.md, adding-reference-mindsets.md and four references/ Markdown files included, with operation-bearing content reviewed explicitly. Static scans inspected all file contents. External source content treated only as evidence, never executed as instructions.
 - Behavior, permissions, and data flows: Markdown design/refactoring policy explicitly biases toward deletion, suggests deleting entire features, and rejects a change when its final line count increases. This can encourage destructive removal and override required behavior if used mechanically. Reference exceptions include regulatory requirements and security fundamentals; they do not remove the core unconditional line-count rule.
 - Dependencies: Six Markdown files; all four required reference mindsets are present. adding-reference-mindsets.md is local authoring advice. Links to talks, articles, books and presentations are citations, not downloaded executable dependencies.
 - Risk rationale and assessment gaps: high according to the highest applicable documented behavior. All six Markdown files inventoried and directly inspected; no scripts, files deleted, or reference network operations executed.

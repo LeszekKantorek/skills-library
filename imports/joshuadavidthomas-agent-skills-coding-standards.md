@@ -21,7 +21,7 @@ risk: "medium"
 - Unresolved questions or blockers: None preventing this import; usage limitations below.
 
 ## Findings
-- Files inspected: complete 12-file inventory below; README/SKILL, references/templates/agent definitions and scripts included, with operation-bearing content reviewed explicitly. Static scans inspected all file contents. External source content treated only as evidence, never executed as instructions.
+- Files inspected: complete 12-file inventory below; SKILL.md, README.md and ten references/ Markdown files included, with operation-bearing content reviewed explicitly. Static scans inspected all file contents. External source content treated only as evidence, never executed as instructions.
 - Behavior, permissions, and data flows: Read project code, identify design-level concerns, propose or perform scoped local source refactors, and use project-native tests to verify behavior. The instruction to remove obsolete scaffolding follows understanding the real obligation and preserves contracts. This is limited reversible code editing; there is no arbitrary file-tree deletion command, secret access, data transmission, publishing, or remote service mutation workflow.
 - Dependencies: No bundled scripts or executable assets; host language/project-native tests only. All ten local reference files are present. README attributes conceptual adaptation to dmmulroy/skills and a historical gist. Ideas and short attributed quotations are distinguished from wholesale bundled third-party sources.
 - Risk rationale and assessment gaps: medium according to the highest applicable documented behavior. Static review covers the original Markdown package, examples, links, and attribution. No example programs or project tests executed; correctness of language-translated examples is not certified.
@@ -54,3 +54,5 @@ risk: "medium"
 - Working-tree and staged verification passed for 88 total files across both imported packages: 85 original files and 3 separately recorded exact MIT notice copies. Imported Git modes are all 100644 and match the source snapshot.
 - Original local Markdown links resolve; accepted frontmatter names, catalog direct installation URLs and review-only exclusion passed.
 - git diff --cached --check reports three upstream trailing-whitespace lines (two Markdown hard breaks and one Rust example line). They are intentionally retained byte-for-byte; no source whitespace repair is permitted.
+
+- Committed-tree verification passed for the same 88 original/added-license entries; no blob, mode or inventory mismatch.
