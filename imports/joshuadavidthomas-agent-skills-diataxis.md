@@ -30,7 +30,7 @@ risk: "high"
 - Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
 - Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All 19 Markdown files inventoried/scanned; core, README, all references and license evidence inspected, with truncated tool output re-read in smaller batches. No source instructions executed or content published. License eligibility is established and separate from high-risk acceptance.
-- Decision and blockers: Review-only hold pending maintainer acceptance for the explicit publishing workflow. Proposed safeguards: produce local drafts first; require user approval naming destination and exact content before any publication; use scoped credentials and redact private content. No acceptance recorded. No skills directory or catalog entry.
+- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
 
 ## Original file inventory
 
@@ -55,3 +55,14 @@ risk: "high"
 | `references/theory.md` | 100644 | `99e2ec3afcaedc6faea0e871e9a38178a24ffadd0f79dd81bde7ad1c8d2430bb` |
 | `references/tutorials-how-to.md` | 100644 | `c33869dd41b38b952a477d4f6ff286209c60445e77a3abe3c58b23a925659d35` |
 | `references/tutorials.md` | 100644 | `68e4526ac8b4ecf12c1c4182f7a22ff1463ca6234e42742da4082a3a161fbc34` |
+
+## Second substantive and risk review (2026-10-08)
+
+All 19 originals were read in full. No demonstrated P1/P2 substantive or framework-fidelity blocker was found. The four categories and their axes agree with the [primary compass](https://diataxis.fr/compass/); tutorial direction agrees with [primary tutorial guidance](https://diataxis.fr/tutorials/). The full references permit minimum explanation in tutorials and factual warnings/examples in reference material; the short instruction to avoid mixing types must be understood with that context.
+
+- Minor fidelity nuance: [how-to-use-diataxis.md:24-52](https://github.com/joshuadavidthomas/agent-skills/blob/516dee7a422b90937b2958d11c03694154ab9c09/diataxis/references/how-to-use-diataxis.md#L24-L52) repeatedly says publish, while the [primary workflow](https://diataxis.fr/how-to-use-diataxis/) also permits at least committing the change. The narrower summary does not make remote publishing technically necessary or authorized.
+- Core classification and local documentation edits are medium. **Overall risk remains high** under the curator's highest-applicable publishing criterion for the recommended end-to-end cycle. There is no upload command, credential retrieval, destination or autonomous publishing mechanism. The assessment concerns recommended actions, not malicious content.
+- Operational safeguards: prepare and review local drafts; preserve private-data boundaries; publish only content and destinations within existing user authorization, using scoped access. No redundant approval is required for an already authorized action.
+- MIT + CC-BY-SA-4.0 remains eligible with exact root MIT and framework LICENSE.rst copies, preserved Daniele Procida attribution and existing conversion notice, and the documented ShareAlike scope for adapted references. No new license blocker was found.
+
+**Disposition:** passes the substantive review; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. Do not treat this hold as a technical rejection of Diataxis or infer that local drafting requires permission to publish. No imported package or catalog row.

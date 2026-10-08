@@ -30,7 +30,7 @@ risk: "high"
 - Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
 - Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All 13 files inventoried and statically inspected for licensing, links, templates and behavior; core workflow and remote-operation/license-bearing references inspected directly. No commands executed. Third-party licenses identified; no actual redistribution performed.
-- Decision and blockers: Review-only hold: remote repository-description writes require explicit maintainer acceptance of safeguards. Proposed safeguards: local drafts by default, never place secret values in README, obtain task-specific authorization before remote metadata changes, restrict gh-description credentials to the intended repository, show exact new description before submission. Maintainer acceptance has not been provided. No skills directory or catalog entry.
+- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
 
 ## Original file inventory
 
@@ -49,3 +49,15 @@ risk: "high"
 | `templates/personal.md` | 100644 | `2aea82c27a5f779b4cd4d67c3d5c08fc4c6ed476a18298ca7b3070f8a7ec6714` |
 | `templates/xdg-config.md` | 100644 | `129095375dedfc2856bf68b561d7968c57aae433721f5ac412442e51ff94abc5` |
 | `using-references.md` | 100644 | `de80ec04ef24a43fdb205d47883efcc544acc6e179f8c072c54778f663045ce6` |
+
+## Second substantive and risk review (2026-10-08)
+
+All 13 originals were read in full. No demonstrated P1/P2 substantive blocker was found. Audience-specific README guidance, installation/usage examples and optional Standard README compliance are coherent. Templates require adaptation to the actual project.
+
+- P3: `templates/oss.md:11` hardcodes a MIT badge although line 77 asks for the actual license. Copying it mechanically could mislabel a project. Use actual project license metadata; this does not authorize relicensing.
+- Copied Standard README examples/specification contain contextual links and assets absent from this package; Art of README translation links are also absent. These are documentary examples, not mandatory runtime dependencies. The optional prose `writing` skill is unbundled.
+- Core local README edits are medium. **Overall risk remains high** under the curator's highest-applicable rule because [standard-readme-spec.md:89](https://github.com/joshuadavidthomas/agent-skills/blob/516dee7a422b90937b2958d11c03694154ab9c09/crafting-effective-readmes/references/standard-readme-spec.md#L89) recommends changing the remote repository description via gh-description. No executable payload, hidden destination or malicious behavior was found. Optional remote metadata changes are distinct from core local drafting.
+- Operational safeguards: draft locally; check license metadata; exclude secret values; perform external metadata/message changes only when the user's task already authorizes the intended repository and value, using scoped access. The skill itself grants no new authority and no redundant approval is required for an already authorized action.
+- Mixed MIT + CC-BY-2.0 remains eligible for redistribution with the previously verified three exact MIT notices and retained Kira/Art of README attribution and CC license link. No new license blocker was found.
+
+**Disposition:** passes the substantive review with minor limitations; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. This hold is not a finding that its documentation advice is materially incorrect. No imported package or catalog row.

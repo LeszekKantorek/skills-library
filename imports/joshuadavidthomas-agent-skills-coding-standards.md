@@ -30,7 +30,7 @@ risk: "medium"
 - Source file integrity: All 12 original files copied from pinned Git blobs; all original relative paths and byte sequences preserved. Working-tree, staged and committed blob/mode comparisons are performed against the machine-readable inventory. Additional exact license copies are verified separately. Package-specific -text attributes and core.autocrlf=false prevent conversion.
 - Added license/attribution files and their provenance: Exact upstream repository LICENSE (Josh Thomas) copied to package LICENSE. Exact dmmulroy/skills LICENSE copied to LICENSE-dmmulroy at 8603380821fee6a77c82639f364ce8fe4f5a92be.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. Static review covers the original Markdown package, examples, links, and attribution. No example programs or project tests executed; correctness of language-translated examples is not certified.
-- Decision and blockers: Imported unchanged. Medium risk reflects local code edits and project-native validation. No high-risk maintainer acceptance is claimed.
+- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
 
 ## Original file inventory
 
@@ -49,10 +49,17 @@ risk: "medium"
 | `references/verification.md` | 100644 | `0597ecdf0178b2d4e74681e4be0c8f252f98e8c8eda45195a0f472ef468c82cd` |
 | `references/vocabulary.md` | 100644 | `5562155162be17ad524be5f7803d0a63d17d8be59b542754eae8ecb52a440a5b` |
 
-## Validation evidence
+## Second substantive and risk review (2026-10-08)
 
-- Working-tree and staged verification passed for 88 total files across both imported packages: 85 original files and 3 separately recorded exact MIT notice copies. Imported Git modes are all 100644 and match the source snapshot.
-- Original local Markdown links resolve; accepted frontmatter names, catalog direct installation URLs and review-only exclusion passed.
-- git diff --cached --check reports three upstream trailing-whitespace lines (two Markdown hard breaks and one Rust example line). They are intentionally retained byte-for-byte; no source whitespace repair is permitted.
+All 12 originals were read in full. Risk remains **medium**: bounded reversible code refactoring and project validation. Removing obsolete helpers while preserving contracts is distinct from removing required features or arbitrary files. Illustrative payment/email/database snippets are architectural examples, not instructions to operate real services.
 
-- Committed-tree verification passed for the same 88 original/added-license entries; no blob, mode or inventory mismatch.
+- **P2: the preferred provider catch hides local defects.** [references/error-handling.md:117-146](https://github.com/joshuadavidthomas/agent-skills/blob/516dee7a422b90937b2958d11c03694154ab9c09/coding-standards/references/error-handling.md#L117-L146) puts both provider access and local parsing inside one try. Any unexpected parser exception becomes `provider-unavailable`, contradicting the stated rule that defects remain loud. An isolated synthetic probe reproduced this with a successful provider and a parser TypeError; cancellation and rate-limit controls worked. Expected malformed input is a separate operational outcome; unexpected programming defects should not be silently classified as provider outages. Sources remain unchanged; this limitation belongs in this review and any upstream correction.
+- The three-day deduplication example in [maintainability.md:246-248](https://github.com/joshuadavidthomas/agent-skills/blob/516dee7a422b90937b2958d11c03694154ab9c09/coding-standards/references/maintainability.md#L246-L248) matches Stripe automatic live-mode retries. [Official delivery documentation](https://docs.stripe.com/webhooks#event-delivery-behaviors) also allows manual resends for 15 days in Dashboard or 30 days using the CLI. The example alone does not cover that late-redelivery contract.
+- Abstract transaction/outbox examples require project-specific uniqueness, isolation and replay guarantees. They are not complete production implementations. The optional `writing-error-messages` companion is not bundled; core reference navigation works.
+- Scoped use: preserve public and persisted contracts, characterize unclear behavior, verify the actual effect/idempotency implementation, and do not adopt the catch or TTL examples without addressing the documented limitation.
+
+**Disposition:** retained unchanged in the proposed import with these explicit caveats. This is not a blanket correctness certification. No new license blocker or high-risk activation requirement was found.
+
+## Final scope integrity
+
+Rust is excluded from PR #18. Verification for the retained package covers exactly **12 original files and two separately recorded MIT notices**, comparing full inventory, bytes and Git modes against pinned blobs in the working tree, index and committed tree. The earlier 88-entry audit included the subsequently excluded Rust package and is historical, not the final scope. No original source was patched. Existing local reference navigation and catalog/review consistency remain valid. The second review executed only an isolated synthetic control-flow probe, not application/provider operations.

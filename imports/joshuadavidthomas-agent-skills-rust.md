@@ -3,7 +3,7 @@ link: "https://github.com/joshuadavidthomas/agent-skills/tree/516dee7a422b90937b
 name: "joshuadavidthomas-agent-skills-rust"
 sha: "516dee7a422b90937b2958d11c03694154ab9c09"
 commit: "https://github.com/joshuadavidthomas/agent-skills/commit/516dee7a422b90937b2958d11c03694154ab9c09"
-risk: "medium"
+risk: "high"
 ---
 
 ## Source
@@ -30,7 +30,7 @@ risk: "medium"
 - Source file integrity: All 73 original files copied from pinned Git blobs; all original relative paths and byte sequences preserved. Working-tree, staged and committed blob/mode comparisons are performed against the machine-readable inventory. Additional exact license copies are verified separately. Package-specific -text attributes and core.autocrlf=false prevent conversion.
 - Added license/attribution files and their provenance: Exact upstream repository LICENSE (Josh Thomas) copied to package LICENSE.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. Every original file was inventoried and statically scanned for behavior, code fences, dependencies, licensing, paths and network destinations; root and operation-bearing references were read in detail. Examples were not compiled or executed. Unsafe/FFI claims and third-party tool versions must be verified for the target project; absence of exhaustive example execution is a stated validation limitation, not a missing dependency blocker.
-- Decision and blockers: Imported unchanged with optional reference-corpus limitation recorded. Medium risk: transparent local edits and tools; no remote publishing/secret handling capability is bundled. No high-risk acceptance is claimed.
+- Decision and blockers: Excluded from PR #18 at the maintainer's explicit request on 2026-10-08 after the second correctness review. No Rust package or catalog row remains in the current proposed tree. The original import verification below describes the earlier branch state, not the final scope. High risk reflects material unsafe-API correctness issues; this is not an accepted import.
 
 ## Original file inventory
 
@@ -117,3 +117,14 @@ risk: "medium"
 - git diff --cached --check reports three upstream trailing-whitespace lines (two Markdown hard breaks and one Rust example line). They are intentionally retained byte-for-byte; no source whitespace repair is permitted.
 
 - Committed-tree verification passed for the same 88 original/added-license entries; no blob, mode or inventory mismatch.
+
+
+## Second review and maintainer scope decision (2026-10-08)
+
+The maintainer explicitly excludes this Rust skill and asks that PR #18 focus on coding-standards, crafting-effective-readmes, diataxis, reducing-entropy, and researching-codebases. Preserve this review as the audit record; do not import or repair the Rust source locally.
+
+The second review found a public safe write_at API accepting arbitrary raw pointers and dereferencing them without an unsafe caller contract (references/ub-and-validity.md:47). An isolated safe null-pointer call compiled in metadata-only mode; the invalid call was never executed. The documented ptr::write validity/alignment requirements establish the defect. See https://doc.rust-lang.org/std/ptr/fn.write.html#safety.
+
+Additional confirmed errors include the claim that Tokio AsyncReadExt::read is not cancellation-safe (async.md:288 and references/production-patterns.md:300), edition 2024 combined with rust-version 1.84, and incorrect Cell, Rc, lifetime, and benchmark/derive guidance. Some evidence used isolated compiler probes; some used primary documentation. No upstream source was patched or installed. These correctness findings supersede the first review's import disposition.
+
+The prior 88-entry verification concerned coding-standards plus Rust before exclusion. Final verification must cover only the packages retained in the updated PR.

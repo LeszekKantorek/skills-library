@@ -30,7 +30,7 @@ risk: "high"
 - Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
 - Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All six Markdown files inventoried and directly inspected; no scripts, files deleted, or reference network operations executed.
-- Decision and blockers: Review-only hold pending high-risk maintainer acceptance. Proposed safeguards: only operate in a version-controlled worktree, agree required behavior first, review deletion diff, retain recovery checkpoint, run behavior tests, never let line count override security/compliance/public contracts or authorize deletion by itself. Original instructions would remain unchanged; safeguards belong in operating policy and this review. No acceptance recorded. No skills directory or catalog entry.
+- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
 
 ## Original file inventory
 
@@ -42,3 +42,13 @@ risk: "high"
 | `references/design-is-taking-apart.md` | 100644 | `62694edb44965c50b7a88fc1f891ae38948b2acd1b872d25c2adc988f352ebe0` |
 | `references/expensive-to-add-later.md` | 100644 | `e00a5bb7d7f485417f72bc95a0c8629ce571bbf7a6353fe23809515e957b0832` |
 | `references/simplicity-vs-easy.md` | 100644 | `b7755a28fdd48e81efb33d257d524c951d33a7bcd4b4d187211d3327943a1da9` |
+
+## Second substantive and risk review (2026-10-08)
+
+All six originals were read in full. **Risk remains high** because the workflow expressly proposes deleting entire features and gives line count precedence. No script, hidden deletion command or malicious payload is bundled.
+
+- **Substantive limitation:** [SKILL.md:35-45](https://github.com/joshuadavidthomas/agent-skills/blob/516dee7a422b90937b2958d11c03694154ab9c09/reducing-entropy/SKILL.md#L35-L45) asks for the smallest codebase solving the problem, but then unconditionally rejects a change when its final line count increases. A necessary correctness/feature change adding a boundary check may therefore be rejected merely for adding code. The listed exceptions do not clearly resolve that rule, and the security/audit recommendations in `expensive-to-add-later.md` create further tension. This is an unsafe decision heuristic, not proof that the skill specifically instructs removing authentication.
+- Essays on simplicity, coupling, data and YAGNI are useful opinions and heuristics, not universal scientific guarantees. Those preferences alone are not grounds for rejection.
+- Safeguards for any accepted restricted use: agree required behavior and permitted deletions first; preserve public/security/compliance obligations; use line count only after satisfying requirements; keep a version-controlled recovery point; inspect the diff and run relevant behavior checks. No actual feature or project file was deleted during review.
+
+**Disposition:** hold as an unrestricted automatic refactoring skill. Restricted behavior-preserving simplification may be reasonable only with documented maintainer acceptance and the above operating constraints; accepting deletion risk alone does not cure the decision-rule limitation. Sources must not be repaired locally. MIT eligibility is unchanged. No imported package or catalog row.
