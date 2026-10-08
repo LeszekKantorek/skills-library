@@ -17,7 +17,7 @@ risk: "high"
 - Scope and file-specific exceptions: Mixed license package: references/art-of-readme.md credits hackergrrl/art-of-readme (Kira) and ends with a CC-BY-2.0 link. Danny Guo make-a-readme material is MIT at [6d9e22931e3bb0c6b926a7bb396d371f78e6e719](https://github.com/dguo/make-a-readme/blob/6d9e22931e3bb0c6b926a7bb396d371f78e6e719/LICENSE); Standard README material is MIT at [5d18ad4db6a39fde5dc845258828153eda9828e8](https://github.com/RichardLitt/standard-readme/blob/5d18ad4db6a39fde5dc845258828153eda9828e8/LICENSE). These grants permit redistribution with their required notices/attribution retained. A future import must add exact MIT notices for Josh Thomas, Danny Guo and Richard Littauer and preserve the original CC attribution/license link. Examples saying Richard McRichface are illustrative, not a substitute for Littauer notice.
 - Redistribution permissions: MIT permits unchanged redistribution when copyright/permission notice is included; mixed packages retain the additional license scopes described above.
 - Required notices and other obligations: preserve all original attribution and applicable license copies; never modify original imported sources or imply endorsement.
-- Preserved license/attribution files and compliance actions: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Preserved license/attribution files and compliance actions: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-make-a-readme`: exact `LICENSE` from `issue-14-make-readme@6d9e22931e3bb0c6b926a7bb396d371f78e6e719`; `LICENSE-standard-readme`: exact `LICENSE` from `issue-14-standard-readme@5d18ad4db6a39fde5dc845258828153eda9828e8`. Original attributions and license links remain unchanged.
 - Unresolved questions or blockers: The operational acceptance/compatibility blockers below are separate from license eligibility.
 
 ## Findings
@@ -27,10 +27,10 @@ risk: "high"
 - Risk rationale and assessment gaps: high according to the highest applicable documented behavior. All 13 files inventoried and statically inspected for licensing, links, templates and behavior; core workflow and remote-operation/license-bearing references inspected directly. No commands executed. Third-party licenses identified; no actual redistribution performed.
 
 ## Import result
-- Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
-- Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Source file integrity: Complete originals imported unchanged from pinned Git blobs; exact inventory, byte and mode checks cover working tree, index and committed tree. Added license notices are checked separately.
+- Added license/attribution files and their provenance: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-make-a-readme`: exact `LICENSE` from `issue-14-make-readme@6d9e22931e3bb0c6b926a7bb396d371f78e6e719`; `LICENSE-standard-readme`: exact `LICENSE` from `issue-14-standard-readme@5d18ad4db6a39fde5dc845258828153eda9828e8`. Original attributions and license links remain unchanged.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All 13 files inventoried and statically inspected for licensing, links, templates and behavior; core workflow and remote-operation/license-bearing references inspected directly. No commands executed. Third-party licenses identified; no actual redistribution performed.
-- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
+- Decision and blockers: Imported unchanged following the maintainer decision below. Earlier review-only holds are superseded; documented findings and operational limits remain.
 
 ## Original file inventory
 
@@ -60,4 +60,12 @@ All 13 originals were read in full. No demonstrated P1/P2 substantive blocker wa
 - Operational safeguards: draft locally; check license metadata; exclude secret values; perform external metadata/message changes only when the user's task already authorizes the intended repository and value, using scoped access. The skill itself grants no new authority and no redundant approval is required for an already authorized action.
 - Mixed MIT + CC-BY-2.0 remains eligible for redistribution with the previously verified three exact MIT notices and retained Kira/Art of README attribution and CC license link. No new license blocker was found.
 
-**Disposition:** passes the substantive review with minor limitations; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. This hold is not a finding that its documentation advice is materially incorrect. No imported package or catalog row.
+**Second-review disposition before maintainer decision:** passes the substantive review with minor limitations; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. This hold is not a finding that its documentation advice is materially incorrect. No imported package or catalog row.
+
+## Maintainer decision and final four-package import (2026-10-08)
+
+After the second review was reported, the maintainer explicitly instructed importing only coding-standards, crafting-effective-readmes, diataxis and reducing-entropy. This records acceptance of the disclosed risks and limitations for the unchanged import; it supersedes prior pending-acceptance holds. Risk ratings and findings are retained. Rust and researching-codebases remain excluded.
+
+**Operating safeguards:** Draft locally, use actual license metadata and exclude secrets. Remote repository-description changes or messages require existing task authorization for the concrete repository and value; use scoped access. Imported prose grants no new authority for external operations or deletion.
+
+**Verification:** the final four-package scope contains 50 original files and eight separately recorded exact license notices (58 entries). Complete inventory, bytes and modes are compared with immutable upstream Git blobs in the working tree, index and committed tree. Package-specific `-text` prevents line-ending conversion. No original file, name, reference, example or frontmatter is modified; documented template, link and correctness limitations are preserved.

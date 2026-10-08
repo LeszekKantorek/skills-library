@@ -64,3 +64,8 @@ All 14 originals were read in full, including all five Python scripts and four a
 **Runtime evidence:** ten isolated fixture assertions passed, including normal operations and the expected reproduced defects. Python ran in isolated mode with bytecode disabled; cwd and home were synthetic, metadata subprocess access was mocked, and no real home, credentials, network or project operations were used. All 20 original files across this package and reducing-entropy retained their hashes. See [Python path resolution](https://docs.python.org/3/library/pathlib.html#pathlib.Path.resolve) and [move semantics](https://docs.python.org/3/library/shutil.html#shutil.move).
 
 **Disposition:** review-only hold. Require compatible external host integration and an upstream containment fix or independently verified invocation boundary plus documented high-risk acceptance before import. Default unrestricted memory-script activation is inappropriate. Restrict promotion to authorized canonical paths, avoid symlink/global moves, sanitize metadata and keep transmitted queries within user scope. Read-only research with manually mapped agents and scripts disabled is a possible outside-package integration, not proof that the original workflow runs unchanged. MIT eligibility is unchanged. No imported package or catalog row.
+
+
+## Maintainer scope decision (2026-10-08)
+
+The maintainer explicitly limits this PR to coding-standards, crafting-effective-readmes, diataxis and reducing-entropy. researching-codebases is excluded, with the second-review findings retained as an audit record. No package or catalog entry is added; this excluded package does not block the four accepted imports.

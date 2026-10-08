@@ -17,7 +17,7 @@ risk: "high"
 - Scope and file-specific exceptions: Repository MIT grant applies; the references are explanatory mindsets and attributed concepts/short quotations, not complete vendored book or talk snapshots. No separate package grant or restrictive file header found.
 - Redistribution permissions: MIT permits unchanged redistribution when copyright/permission notice is included; mixed packages retain the additional license scopes described above.
 - Required notices and other obligations: preserve all original attribution and applicable license copies; never modify original imported sources or imply endorsement.
-- Preserved license/attribution files and compliance actions: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Preserved license/attribution files and compliance actions: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`. Original attributions and license links remain unchanged.
 - Unresolved questions or blockers: The operational acceptance/compatibility blockers below are separate from license eligibility.
 
 ## Findings
@@ -27,10 +27,10 @@ risk: "high"
 - Risk rationale and assessment gaps: high according to the highest applicable documented behavior. All six Markdown files inventoried and directly inspected; no scripts, files deleted, or reference network operations executed.
 
 ## Import result
-- Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
-- Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Source file integrity: Complete originals imported unchanged from pinned Git blobs; exact inventory, byte and mode checks cover working tree, index and committed tree. Added license notices are checked separately.
+- Added license/attribution files and their provenance: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`. Original attributions and license links remain unchanged.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All six Markdown files inventoried and directly inspected; no scripts, files deleted, or reference network operations executed.
-- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
+- Decision and blockers: Imported unchanged following the maintainer decision below. Earlier review-only holds are superseded; documented findings and operational limits remain.
 
 ## Original file inventory
 
@@ -51,4 +51,12 @@ All six originals were read in full. **Risk remains high** because the workflow 
 - Essays on simplicity, coupling, data and YAGNI are useful opinions and heuristics, not universal scientific guarantees. Those preferences alone are not grounds for rejection.
 - Safeguards for any accepted restricted use: agree required behavior and permitted deletions first; preserve public/security/compliance obligations; use line count only after satisfying requirements; keep a version-controlled recovery point; inspect the diff and run relevant behavior checks. No actual feature or project file was deleted during review.
 
-**Disposition:** hold as an unrestricted automatic refactoring skill. Restricted behavior-preserving simplification may be reasonable only with documented maintainer acceptance and the above operating constraints; accepting deletion risk alone does not cure the decision-rule limitation. Sources must not be repaired locally. MIT eligibility is unchanged. No imported package or catalog row.
+**Second-review disposition before maintainer decision:** hold as an unrestricted automatic refactoring skill. Restricted behavior-preserving simplification may be reasonable only with documented maintainer acceptance and the above operating constraints; accepting deletion risk alone does not cure the decision-rule limitation. Sources must not be repaired locally. MIT eligibility is unchanged. No imported package or catalog row.
+
+## Maintainer decision and final four-package import (2026-10-08)
+
+After the second review was reported, the maintainer explicitly instructed importing only coding-standards, crafting-effective-readmes, diataxis and reducing-entropy. This records acceptance of the disclosed risks and limitations for the unchanged import; it supersedes prior pending-acceptance holds. Risk ratings and findings are retained. Rust and researching-codebases remain excluded.
+
+**Operating safeguards:** Agree required behavior and permitted removals before editing. Preserve security/compliance/public contracts; line count is a secondary heuristic and must not reject required fixes. Keep a version-controlled recovery point, review deletion diffs and verify behavior. Imported prose grants no new authority for external operations or deletion.
+
+**Verification:** the final four-package scope contains 50 original files and eight separately recorded exact license notices (58 entries). Complete inventory, bytes and modes are compared with immutable upstream Git blobs in the working tree, index and committed tree. Package-specific `-text` prevents line-ending conversion. No original file, name, reference, example or frontmatter is modified; documented template, link and correctness limitations are preserved.

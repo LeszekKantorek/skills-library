@@ -17,7 +17,7 @@ risk: "high"
 - Scope and file-specific exceptions: README explicitly assigns references derived from DiĂˇtaxis by Daniele Procida to CC-BY-SA-4.0 and states they were downloaded/converted to Markdown. Verified against pinned [DiĂˇtaxis README](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/README.rst) and [LICENSE.rst](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/LICENSE.rst). MIT applies to authored skill material; CC-BY-SA-4.0 applies to derived reference material. Preserve attribution, source/license links, prior conversion notice and ShareAlike for adaptations. A future import can add exact source MIT LICENSE and pinned third-party LICENSE.rst without modifying originals; the references must not be relabeled MIT.
 - Redistribution permissions: MIT permits unchanged redistribution when copyright/permission notice is included; mixed packages retain the additional license scopes described above.
 - Required notices and other obligations: preserve all original attribution and applicable license copies; never modify original imported sources or imply endorsement.
-- Preserved license/attribution files and compliance actions: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Preserved license/attribution files and compliance actions: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-diataxis.rst`: exact `LICENSE.rst` from `issue-14-diataxis@957c09ca40b4a1edc23874f713e01937d50d54d5`. Original attributions and license links remain unchanged.
 - Unresolved questions or blockers: The operational acceptance/compatibility blockers below are separate from license eligibility.
 
 ## Findings
@@ -27,10 +27,10 @@ risk: "high"
 - Risk rationale and assessment gaps: high according to the highest applicable documented behavior. All 19 Markdown files inventoried/scanned; core, README, all references and license evidence inspected, with truncated tool output re-read in smaller batches. No source instructions executed or content published. License eligibility is established and separate from high-risk acceptance.
 
 ## Import result
-- Source file integrity: Not imported or staged. The immutable upstream inventory below records SHA-256 and Git mode for every original file. No imported-blob comparison is claimed for a review-only hold.
-- Added license/attribution files and their provenance: None redistributed. Applicable additional notice copies identified in License review for any future accepted import.
+- Source file integrity: Complete originals imported unchanged from pinned Git blobs; exact inventory, byte and mode checks cover working tree, index and committed tree. Added license notices are checked separately.
+- Added license/attribution files and their provenance: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-diataxis.rst`: exact `LICENSE.rst` from `issue-14-diataxis@957c09ca40b4a1edc23874f713e01937d50d54d5`. Original attributions and license links remain unchanged.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. All 19 Markdown files inventoried/scanned; core, README, all references and license evidence inspected, with truncated tool output re-read in smaller batches. No source instructions executed or content published. License eligibility is established and separate from high-risk acceptance.
-- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
+- Decision and blockers: Imported unchanged following the maintainer decision below. Earlier review-only holds are superseded; documented findings and operational limits remain.
 
 ## Original file inventory
 
@@ -65,4 +65,12 @@ All 19 originals were read in full. No demonstrated P1/P2 substantive or framewo
 - Operational safeguards: prepare and review local drafts; preserve private-data boundaries; publish only content and destinations within existing user authorization, using scoped access. No redundant approval is required for an already authorized action.
 - MIT + CC-BY-SA-4.0 remains eligible with exact root MIT and framework LICENSE.rst copies, preserved Daniele Procida attribution and existing conversion notice, and the documented ShareAlike scope for adapted references. No new license blocker was found.
 
-**Disposition:** passes the substantive review; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. Do not treat this hold as a technical rejection of Diataxis or infer that local drafting requires permission to publish. No imported package or catalog row.
+**Second-review disposition before maintainer decision:** passes the substantive review; remains review-only pending documented maintainer acceptance of high-risk operational safeguards. Do not treat this hold as a technical rejection of Diataxis or infer that local drafting requires permission to publish. No imported package or catalog row.
+
+## Maintainer decision and final four-package import (2026-10-08)
+
+After the second review was reported, the maintainer explicitly instructed importing only coding-standards, crafting-effective-readmes, diataxis and reducing-entropy. This records acceptance of the disclosed risks and limitations for the unchanged import; it supersedes prior pending-acceptance holds. Risk ratings and findings are retained. Rust and researching-codebases remain excluded.
+
+**Operating safeguards:** Prepare and review local documentation. Publish only content and destinations within existing task authorization; preserve private-data boundaries and use scoped access. Imported prose grants no new authority for external operations or deletion.
+
+**Verification:** the final four-package scope contains 50 original files and eight separately recorded exact license notices (58 entries). Complete inventory, bytes and modes are compared with immutable upstream Git blobs in the working tree, index and committed tree. Package-specific `-text` prevents line-ending conversion. No original file, name, reference, example or frontmatter is modified; documented template, link and correctness limitations are preserved.

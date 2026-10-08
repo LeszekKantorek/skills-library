@@ -17,7 +17,7 @@ risk: "medium"
 - Scope and file-specific exceptions: The package README attributes adapted ideas from dmmulroy/skills. Its repository LICENSE is MIT at [8603380821fee6a77c82639f364ce8fe4f5a92be](https://github.com/dmmulroy/skills/blob/8603380821fee6a77c82639f364ce8fe4f5a92be/LICENSE). The exact source LICENSE is additionally preserved as LICENSE-dmmulroy; its notice says Copyright (c) 2026 Matt Pocock and is not corrected or reassigned. Short attributed quotations and cited concepts do not establish a separate package license.
 - Redistribution permissions: MIT permits unchanged redistribution when copyright/permission notice is included; mixed packages retain the additional license scopes described above.
 - Required notices and other obligations: preserve all original attribution and applicable license copies; never modify original imported sources or imply endorsement.
-- Preserved license/attribution files and compliance actions: Exact upstream repository LICENSE (Josh Thomas) copied to package LICENSE. Exact dmmulroy/skills LICENSE copied to LICENSE-dmmulroy at 8603380821fee6a77c82639f364ce8fe4f5a92be.
+- Preserved license/attribution files and compliance actions: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-dmmulroy`: exact `LICENSE` from `issue-14-dmmulroy@8603380821fee6a77c82639f364ce8fe4f5a92be`. Original attributions and license links remain unchanged.
 - Unresolved questions or blockers: None preventing this import; usage limitations below.
 
 ## Findings
@@ -27,10 +27,10 @@ risk: "medium"
 - Risk rationale and assessment gaps: medium according to the highest applicable documented behavior. Static review covers the original Markdown package, examples, links, and attribution. No example programs or project tests executed; correctness of language-translated examples is not certified.
 
 ## Import result
-- Source file integrity: All 12 original files copied from pinned Git blobs; all original relative paths and byte sequences preserved. Working-tree, staged and committed blob/mode comparisons are performed against the machine-readable inventory. Additional exact license copies are verified separately. Package-specific -text attributes and core.autocrlf=false prevent conversion.
-- Added license/attribution files and their provenance: Exact upstream repository LICENSE (Josh Thomas) copied to package LICENSE. Exact dmmulroy/skills LICENSE copied to LICENSE-dmmulroy at 8603380821fee6a77c82639f364ce8fe4f5a92be.
+- Source file integrity: Complete originals imported unchanged from pinned Git blobs; exact inventory, byte and mode checks cover working tree, index and committed tree. Added license notices are checked separately.
+- Added license/attribution files and their provenance: `LICENSE`: exact `LICENSE` from `issue-14@516dee7a422b90937b2958d11c03694154ab9c09`; `LICENSE-dmmulroy`: exact `LICENSE` from `issue-14-dmmulroy@8603380821fee6a77c82639f364ce8fe4f5a92be`. Original attributions and license links remain unchanged.
 - Checks performed and limitations: immutable Git snapshot and complete file/mode inventory; UTF-8/frontmatter names; local Markdown links and inline path references; license/attribution scope; static code/behavior and dependency scans; review/catalog consistency. No upstream code or instructions executed. Static review covers the original Markdown package, examples, links, and attribution. No example programs or project tests executed; correctness of language-translated examples is not certified.
-- Decision and blockers: See the second substantive and risk review below for the current disposition; its scope and safeguards supersede the earlier assessment.
+- Decision and blockers: Imported unchanged following the maintainer decision below. Earlier review-only holds are superseded; documented findings and operational limits remain.
 
 ## Original file inventory
 
@@ -58,8 +58,16 @@ All 12 originals were read in full. Risk remains **medium**: bounded reversible 
 - Abstract transaction/outbox examples require project-specific uniqueness, isolation and replay guarantees. They are not complete production implementations. The optional `writing-error-messages` companion is not bundled; core reference navigation works.
 - Scoped use: preserve public and persisted contracts, characterize unclear behavior, verify the actual effect/idempotency implementation, and do not adopt the catch or TTL examples without addressing the documented limitation.
 
-**Disposition:** retained unchanged in the proposed import with these explicit caveats. This is not a blanket correctness certification. No new license blocker or high-risk activation requirement was found.
+**Second-review disposition before maintainer decision:** retained unchanged in the proposed import with these explicit caveats. This is not a blanket correctness certification. No new license blocker or high-risk activation requirement was found.
 
 ## Final scope integrity
 
-Rust is excluded from PR #18. Verification for the retained package covers exactly **12 original files and two separately recorded MIT notices**, comparing full inventory, bytes and Git modes against pinned blobs in the working tree, index and committed tree. The earlier 88-entry audit included the subsequently excluded Rust package and is historical, not the final scope. No original source was patched. Existing local reference navigation and catalog/review consistency remain valid. The second review executed only an isolated synthetic control-flow probe, not application/provider operations.
+Rust is excluded from PR #18. The preceding one-package verification covered exactly **12 original files and two separately recorded MIT notices**, comparing full inventory, bytes and Git modes against pinned blobs in the working tree, index and committed tree. The earlier 88-entry audit included the subsequently excluded Rust package and is historical, not the final scope. No original source was patched. Existing local reference navigation and catalog/review consistency remain valid. The second review executed only an isolated synthetic control-flow probe, not application/provider operations.
+
+## Maintainer decision and final four-package import (2026-10-08)
+
+After the second review was reported, the maintainer explicitly instructed importing only coding-standards, crafting-effective-readmes, diataxis and reducing-entropy. This records acceptance of the disclosed risks and limitations for the unchanged import; it supersedes prior pending-acceptance holds. Risk ratings and findings are retained. Rust and researching-codebases remain excluded.
+
+**Operating safeguards:** Preserve required contracts and check real project behavior; retain the documented catch/TTL caveats. Imported prose grants no new authority for external operations or deletion.
+
+**Verification:** the final four-package scope contains 50 original files and eight separately recorded exact license notices (58 entries). Complete inventory, bytes and modes are compared with immutable upstream Git blobs in the working tree, index and committed tree. Package-specific `-text` prevents line-ending conversion. No original file, name, reference, example or frontmatter is modified; documented template, link and correctness limitations are preserved.
