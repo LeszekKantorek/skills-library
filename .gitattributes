@@ -7,3 +7,17 @@
 /skills/obra-superpowers-receiving-code-review/** -text
 /skills/obra-superpowers-brainstorming/** -text
 /skills/obra-superpowers-systematic-debugging/** -text
+
+/skills/rewrite-rs-skills-rust-code-review/** -text
+/skills/rewrite-rs-skills-rust-testing/** -text
+/skills/rewrite-rs-skills-idiomatic-rust/** -text
+/skills/rewrite-rs-skills-ownership-not-clone/** -text
+/skills/rewrite-rs-skills-rust-api-design/** -text
+/skills/rewrite-rs-skills-rust-concurrency/** -text
+/skills/rewrite-rs-skills-rust-docs/** -text
+/skills/rewrite-rs-skills-rust-errors/** -text
+/skills/rewrite-rs-skills-rust-observability/** -text
+/skills/rewrite-rs-skills-rust-performance/** -text
+/skills/rewrite-rs-skills-type-driven-design/** -text
+/skills/rewrite-rs-skills-unsafe-rust/** -text
+/skills/rewrite-rs-skills-rust-supply-chain/** -text
