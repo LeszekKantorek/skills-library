@@ -16,11 +16,11 @@ risk: "low"
 
 - License identifier(s): none found; unlicensed snapshot.
 - Evidence: [pinned repository tree](https://github.com/jurgendn/agent-skills/tree/f290312fb6c55a044402e8649afff5c112e660ab) and [package](https://github.com/jurgendn/agent-skills/tree/f290312fb6c55a044402e8649afff5c112e660ab/skills/research-experimentation/hypothesis-and-ablation-planner). Tracked inventory contains no LICENSE/COPYING file. Repository-wide searches for licensing, copyright and redistribution terms found no license grant covering these packages. Package files contain no separate license notice.
-- Scope and file-specific exceptions: no applicable terms identified; no redistribution grant established. Public availability and attribution are not permission.
+- Scope and file-specific exceptions: no applicable terms identified; no redistribution grant established.
 - Redistribution permissions: unresolved.
 - Required notices and other obligations: cannot determine without terms from the rights holder.
 - Preserved license/attribution files and compliance actions: no source license available to copy. Added library-authored `SOURCE.md` identifies repository, original path, full commit and retrieval date, and explicitly records the absence of a license.
-- Maintainer decision: in this chat on 2026-10-21, the maintainer explicitly requested import with SOURCE.md when a license is missing. Proceeded under that instruction, overriding the curator's default license hold. This does not resolve or represent a license grant. Obtain rights-holder permission or a covering upstream license before relying on redistribution permission.
+- Maintainer decision: in this chat on 2026-10-21, the maintainer explicitly requested import with SOURCE.md when a license is missing. Proceeded under that instruction, overriding the curator's default license hold.
 
 ## Findings
 

@@ -7,4 +7,4 @@
 - Retrieved: 2026-10-21 (Europe/Warsaw)
 - Import request: https://github.com/LeszekKantorek/skills-library/issues/22
 
-Original files are preserved unchanged. This SOURCE.md was added by the importing library at the maintainer's request. No redistribution license was found in this snapshot; attribution does not grant a license.
+Original files are preserved unchanged. This SOURCE.md was added by the importing library at the maintainer's request. No redistribution license was found in this snapshot.
