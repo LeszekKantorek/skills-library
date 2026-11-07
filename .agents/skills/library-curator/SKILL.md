@@ -19,7 +19,7 @@ Identify actionable defects and gaps without substituting for substantive analys
 
 | Condition | Action | Result |
 | --- | --- | --- |
-| Migration is incomplete or `catalog/` is absent | Distinguish existing entries from migrated entries. | No claim of whole-library completeness. |
+| A required report or catalog entry is absent | Route the gap to the responsible stage. | The review identifies missing work. |
 | Evidence is inaccessible | Record the limitation and affected claims. | The review does not imply verification. |
 
 * Continue when scope, available evidence, and limitations are explicit.
@@ -28,14 +28,15 @@ Identify actionable defects and gaps without substituting for substantive analys
 
 * Compare identifiers, source paths, item types, inventories, and source README item lists.
 * Check duplicates, naming collisions, local links, and material claims against cited evidence.
-* Compare installation, platform, license, and validation claims with their evidence and scope.
+* Check that catalog entries use `Source | Skill | Description | Risk`. Check that reports or source READMEs retain installation guidance.
+* Compare installation, license, and validation claims with their evidence and scope.
 * Compare analysis, security, and observed commits, dates, and change-scope evidence.
 
 | Check | Expected | Correction |
 | --- | --- | --- |
-| Stale or absent assessment | Current risk is `unknown` | Flag the incorrect current risk. |
-| Current assessment | Report and catalog agree; completeness and confidence are separate from risk | Flag inconsistent status or rating. |
-| Critical assessment, including stale history | Warning remains visible without installation encouragement | Flag the missing or misleading warning. |
+| Assessment absent or commit differs | Risk is `unknown` | Flag the unsupported rating. |
+| Assessment commit matches | Report and catalog agree; completeness and confidence are separate from risk | Flag the inconsistent rating. |
+| Critical assessment | Warning remains visible without installation encouragement | Flag the missing or misleading warning. |
 | Evidence does not support a claim | Claim is qualified or gap is explicit | Flag the unsupported claim. |
 
 * Continue when each mismatch has a location and evidence, or record the review limitation.
@@ -47,7 +48,7 @@ Identify actionable defects and gaps without substituting for substantive analys
 
 | Finding | Route | Recheck |
 | --- | --- | --- |
-| Source, description, platform, installation, or license gap | library-catalog | Compare the correction with source evidence. |
+| Source, description, installation, or license gap | library-catalog | Compare the correction with source evidence. |
 | Security evidence, behavior, risk, or assessment gap | library-security-review | Compare the correction with assessment evidence. |
 | Catalog and report mismatch | Responsible stage for the affected field | Compare both records again. |
 

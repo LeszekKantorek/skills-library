@@ -1,6 +1,6 @@
 ---
 name: library-catalog
-description: Analyze a skill, plugin, or collection and create or update its source report and catalog entry.
+description: Analyze a new external skill, plugin, or collection and create its catalog report and entry.
 ---
 
 # Catalog a source item
@@ -13,7 +13,7 @@ Produce an evidence-based item report and catalog entry for a specific source ve
 
 ### 1. Resolve the item and source
 
-* Read the request, `CATALOG.md`, related reports, source README, and historical import reports.
+* Read the request, `CATALOG.md`, related reports, and source README.
 * Identify the repository, item path, type, scope, and existing identifier.
 * Normalize owner and repository to lowercase. Replace runs of non-alphanumeric characters with hyphens and trim edge hyphens.
 * Join the components as `<owner>-<repo>`. Inspect snapshots under `.local/`, outside skill discovery paths.
@@ -21,7 +21,7 @@ Produce an evidence-based item report and catalog entry for a specific source ve
 
 | Condition | Action | Result |
 | --- | --- | --- |
-| Existing entry covers the same item | Update that entry. | No duplicate report. |
+| Existing entry covers the same item | Report the duplicate and stop creating the entry. | No duplicate report. |
 | Different items share a name | Add type and source path to distinguish names. | Neither item is overwritten. |
 | Identity, scope, or immutable version is missing | Record the gap and stop dependent claims. | No invented identifier or version. |
 
@@ -37,8 +37,6 @@ Produce an evidence-based item report and catalog entry for a specific source ve
 | --- | --- | --- |
 | Observed repository commit differs | Check whether changes affect the item. | Record `changed`, `unchanged`, or `unknown`. |
 | Comparison is unavailable | Record the missing evidence. | Do not infer an item change. |
-| Catalog analysis commit changes | Preserve prior security history. Apply the [security status rules](../library-security-review/SKILL.md#3-record-assessment-and-risk). | Earlier assessment is stale. |
-| Catalog analysis commit stays the same | Retain its assessment status. | A newer observation alone does not change that status. |
 
 * Continue when both versions and their relationship are recorded, including any unknowns.
 
@@ -49,13 +47,10 @@ Produce an evidence-based item report and catalog entry for a specific source ve
 * Inventory scripts, dependencies, hooks, agents, prompts, MCP configuration, and tests.
 * Distinguish installation, later use, and tests. Link claims to exact files at the analyzed commit.
 * Separate source claims, your inferences, and unknowns. Record inaccessible evidence.
-* Identify license terms, scope, exceptions, and evidence. Do not infer rights from historical import approval.
+* Identify license terms, scope, exceptions, and evidence.
 
 | Condition | Action | Result |
 | --- | --- | --- |
-| Platform claim lacks file evidence or verification | Record the author's claim and mark verification `unverified`. | No unsupported compatibility claim. |
-| Only `SKILL.md` exists | Check platform-specific evidence separately. | No assumed universal platform support. |
-| Installer or plugin has separate support | Record its platform evidence separately. | Item and installation support remain distinct. |
 | License evidence is missing or unclear | Record the gap and scope. | No guessed license. |
 | Shared repository information applies | Check its application to this item. | Item-specific evidence remains visible. |
 
@@ -79,16 +74,16 @@ Produce an evidence-based item report and catalog entry for a specific source ve
 ### 5. Write the report and hand off
 
 * Use the [report template](references/review-template.md).
-* Create or update `catalog/<owner>-<repo>/README.md` and the item report beside it.
-* Link the source README to its items. Update `CATALOG.md` with source, description, platforms, status, risk, and installation guidance.
-* Apply the [security status rules](../library-security-review/SKILL.md#3-record-assessment-and-risk).
-* Retain historical critical warnings. Do not encourage installation for critical risk.
+* Create or extend `catalog/<owner>-<repo>/README.md`. Create the item report beside it.
+* Link the source README to its items. Update `CATALOG.md` with the columns `Source | Skill | Description | Risk`. Keep installation guidance in the report or source README.
+* Set risk to `unknown` until security review assesses the same source commit.
+* Apply the [security risk rules](../library-security-review/SKILL.md#3-record-assessment-and-risk).
 * Record documented claims, static checks, tests, and remaining gaps separately.
 
 | Check | Expected | Correction |
 | --- | --- | --- |
 | Identity and links | Unique item and resolving links | Resolve collision or broken link. |
-| Catalog and report | Matching status, risk, and version | Correct the inconsistent field. |
-| Security assessment | Evidence matches its stated version | Apply the security status and risk table. |
+| Catalog and report | Matching risk and version | Correct the inconsistent field. |
+| Security assessment | Evidence matches its stated version | Use `unknown` until the matching commit is assessed. |
 
 * Continue to security review when the report and catalog agree, with unresolved gaps explicit.

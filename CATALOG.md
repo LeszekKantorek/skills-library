@@ -1,12 +1,23 @@
 # Skill catalog
 
+## Migrated pilot entries
+
+These reports describe upstream sources and a security assessment at a pinned commit. Installation details and limits are in each report.
+
+| Source | Skill | Description | Risk |
+| --- | --- | --- | --- |
+| [felixgeelhaar/skills](https://github.com/felixgeelhaar/skills) | [ai-expert](catalog/felixgeelhaar-skills/ai-expert.md) | AI product and architecture decisions | medium |
+| [felixgeelhaar/skills](https://github.com/felixgeelhaar/skills) | [bizops-expert](catalog/felixgeelhaar-skills/bizops-expert.md) | Process design and operating cadence | medium |
+| [felixgeelhaar/skills](https://github.com/felixgeelhaar/skills) | [coach-expert](catalog/felixgeelhaar-skills/coach-expert.md) | Life and leadership coaching | medium |
+
+## Legacy entries
+
+The remaining entries retain their historical import format and assessments during migration.
+
 Package directories use the library's owner-repository-skill naming convention. Original SKILL.md files, including frontmatter names and companion references, remain unchanged at the maintainer's explicit request. Packages preserve applicable source licenses where available; reviews identify the immutable source version, license status, and import decision. Packages imported without a source license include SOURCE.md attribution.
 
 | Name | Original name | Description | Risk | License | npx |
 | --- | --- | --- | --- | --- | --- |
-| [felixgeelhaar-skills-ai-expert](skills/felixgeelhaar-skills-ai-expert/SKILL.md) | ai-expert | Senior AI product partner. Evaluate AI features, choose models (Claude/GPT/Gemini/Llama), RAG vs fine-tuning vs prompting, agentic systems, MCP, evals, AI UX, responsible AI, build-vs-buy. | [medium](imports/felixgeelhaar-skills-ai-expert.md) | [MIT](imports/felixgeelhaar-skills-ai-expert.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill ai-expert` |
-| [felixgeelhaar-skills-bizops-expert](skills/felixgeelhaar-skills-bizops-expert/SKILL.md) | bizops-expert | Senior business operations partner. Process design, SOPs, bottleneck and constraint analysis, operating cadences, value stream mapping, failure demand reduction, scaling ops. | [medium](imports/felixgeelhaar-skills-bizops-expert.md) | [MIT](imports/felixgeelhaar-skills-bizops-expert.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill bizops-expert` |
-| [felixgeelhaar-skills-coach-expert](skills/felixgeelhaar-skills-coach-expert/SKILL.md) | coach-expert | Senior life and leadership coaching partner. Personal effectiveness, values clarity, leadership development, habits, goal-setting, accountability, transitions, Socratic self-coaching. | [medium](imports/felixgeelhaar-skills-coach-expert.md) | [MIT](imports/felixgeelhaar-skills-coach-expert.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill coach-expert` |
 | [felixgeelhaar-skills-communication-expert](skills/felixgeelhaar-skills-communication-expert/SKILL.md) | communication-expert | Senior communication, negotiation, and storytelling partner. Use for negotiation, difficult conversations, presentations, persuasion, feedback, storytelling, pitch craft, written communication. | [medium](imports/felixgeelhaar-skills-communication-expert.md) | [MIT](imports/felixgeelhaar-skills-communication-expert.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill communication-expert` |
 | [felixgeelhaar-skills-content-editor](skills/felixgeelhaar-skills-content-editor/SKILL.md) | content-editor | Editorial director that turns raw notes into PRDs, 6-pagers, operating models, strategy memos, RFCs, READMEs. Grounded in Zinsser, Orwell, Basecamp, Google Style, Diátaxis. Tone dial included. | [medium](imports/felixgeelhaar-skills-content-editor.md) | [MIT](imports/felixgeelhaar-skills-content-editor.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill content-editor` |
 | [felixgeelhaar-skills-content-expert](skills/felixgeelhaar-skills-content-expert/SKILL.md) | content-expert | Senior content strategy and technical writing partner. Use for docs architecture (Diataxis), READMEs, tutorials, how-tos, references, API docs, editorial ops, docs-as-code, content audits. | [medium](imports/felixgeelhaar-skills-content-expert.md) | [MIT](imports/felixgeelhaar-skills-content-expert.md#license-review) | `npx skills add LeszekKantorek/skills-library --skill content-expert` |

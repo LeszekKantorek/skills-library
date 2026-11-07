@@ -1,23 +1,19 @@
 # Item report template
 
-Replace the title with the item name. Replace prompts with evidence or an explicit unknown. Link source evidence to the full commit and relevant path. Retain prior assessments as dated history when updating.
+Replace the title with the item name. Replace prompts with evidence or an explicit unknown. Link source evidence to the full commit and relevant path.
 
 ## Identity and versions
 
 * Stable identifier, name, author, type, repository, item path, and assessed scope:
 * Catalog analysis: full commit SHA, permalink, and date:
 * Latest observed: full commit SHA, branch, observation date, and evidence of whether changes affect this item (`changed`, `unchanged`, or `unknown`):
-* Security status (`not assessed`, `stale`, or `current`), security commit and date, and current risk (`unknown` when stale or not assessed):
+* Security assessment commit and date, and risk (`unknown` until the analyzed commit is assessed):
 
 ## Purpose and contents
 
 * Purpose, intended users, concrete uses, and unsuitable cases:
 * Inventory of instructions, scripts, tests/evals, prompts, agents, hooks, MCP configuration, assets, and dependencies; distinguish installation, later use, and tests:
 * Evidence and gaps:
-
-## Platforms
-
-For each platform, record the author's claim, file evidence, and verification result or `unverified`. Distinguish item support from installer or plugin support.
 
 ## Installation
 
@@ -36,8 +32,4 @@ Record identifier or missing/unclear terms, scope, exceptions, and pinned eviden
 
 ## Validation
 
-Separate documented claims, static verification, and tests performed. Record files inspected, environment, test results, and what was not checked. Do not describe a historical review as a new audit.
-
-## History
-
-Link prior reports, issues or PRs, and material changes. Preserve prior security commit, date, scope, risk, and limitations as historical information.
+Separate documented claims, static verification, and tests performed. Record files inspected, environment, test results, and what was not checked.
