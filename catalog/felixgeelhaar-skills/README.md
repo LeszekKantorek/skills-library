@@ -6,6 +6,16 @@
 * [Business operations expert](bizops-expert.md)
 * [Life and leadership coach](coach-expert.md)
 
+* [Communication expert](communication-expert.md)
+* [Content editor](content-editor.md)
+* [Content expert](content-expert.md)
+* [Customer success expert](customer-success-expert.md)
+* [Data expert](data-expert.md)
+* [Devops expert](devops-expert.md)
+* [Engineering expert](engineering-expert.md)
+* [Executive assistant expert](executive-assistant-expert.md)
+* [Facilitation expert](facilitation-expert.md)
+* [Finance expert](finance-expert.md)
 
 ## Installation
 
