@@ -1,40 +1,58 @@
-# skills-library
+# Skills Library
 
-A library of AI skills installable with [`npx skills`](https://github.com/vercel-labs/skills).
+Skills Library catalogs external AI skills and plugins for readers who want to understand their contents, usefulness, installation, and security risks.
 
-Browse [CATALOG.md](CATALOG.md) for skills, risk ratings, reviews, and installation commands.
+Browse the [catalog](CATALOG.md) to compare sources, skills, descriptions, and risk ratings. Each entry links to a report with source evidence and an assessment at a specific commit.
 
-## Installation
+## Use the catalog
 
-```sh
-npx skills add LeszekKantorek/skills-library --list
-npx skills add https://github.com/LeszekKantorek/skills-library/tree/main/skills/<name>
-```
+1. Choose an item in [CATALOG.md](CATALOG.md).
+2. Read its report for purpose, contents, prerequisites, license, and security findings.
+3. Compare the assessed commit with the latest observed source commit recorded in the report.
+4. Follow the report's installation guidance or its link to the shared source README.
 
-Replace `<name>` with the library name from the catalog. Imported source files, including their original skill names and references, are preserved unchanged; applicable license files are included in each package.
+Installation uses the upstream source. Reports identify the applicable method, such as an `npx` command or plugin installation procedure, and its scope. This repository stores descriptions and reviews rather than copies of external packages.
 
-## Request an import
+A command that follows a branch or downloads dependencies can install code outside the assessed snapshot. Read the installation limits before running it.
 
-Open a [GitHub Issue](https://github.com/LeszekKantorek/skills-library/issues/new/choose) with one or more skill links. Requests are reviewed and imported through pull requests.
+## Read the risk rating
 
-For requests containing multiple links, the issue records each outcome. Merging a linked pull request into `main` automatically closes the issue. Closing a PR without merging leaves the issue open. The issue form does not run an automatic importer.
-
-## Risk
-
-| Rating | Meaning |
+| Risk | Meaning |
 | --- | --- |
-| `low` | Instructions and local reads. |
-| `medium` | Limited local changes, scripts, or network reads. |
-| `high` | Sensitive data, external changes, broad permissions, or material assessment gaps. |
-| `critical` | Malicious or hidden destructive behavior; rejected. |
+| `low` | Local reading or instructions with limited effects. |
+| `medium` | Reversible local writes, limited execution, or network reads without private data. |
+| `high` | Secrets, data transmission, publication, deletion, service changes, or broad permissions with material consequences. |
+| `critical` | Theft, concealed destruction, or safeguard bypass with severe consequences. |
+| `unknown` | Insufficient evidence to assign a rating. |
 
-Read each skill's review for the reasons and limitations. A rating is not a safety guarantee. Imports with material assessment gaps remain blocked until those gaps are resolved.
+Ratings describe the assessed behavior and scope. High risk does not mean malware, and low risk is not a safety guarantee. Reports record evidence, safeguards, coverage gaps, and untested behavior separately.
 
-## Repository
+## Check source versions
 
-- `skills/` — imported skills and their resources.
-- `imports/` — technical reviews and source metadata.
-- [CATALOG.md](CATALOG.md) — available skills.
-- [library-curator](.agents/skills/library-curator/SKILL.md) — maintainer workflow and templates.
+Each report records the full analysis and security commit SHAs, dates, and latest observed upstream commit. Use these references to identify the reviewed version and compare later changes.
 
-Changes to `main` require a pull request.
+The latest observed commit reflects the report's check date. It does not imply that later upstream changes have been assessed. Installation commands do not necessarily pin the reviewed commit.
+
+## Request an assessment or update
+
+Open a [GitHub issue](https://github.com/LeszekKantorek/skills-library/issues/new/choose) with the upstream source and item path. For an update, include the existing catalog report and the revision or changes to inspect.
+
+## Repository structure
+
+| Path | Contents |
+| --- | --- |
+| [CATALOG.md](CATALOG.md) | Source, skill, description, and risk table. |
+| `catalog/<owner>-<repo>/README.md` | Source overview, item links, and shared installation and license information. |
+| `catalog/<owner>-<repo>/<item>.md` | Item description, source versions, installation guidance, and security evidence. |
+| `.agents/skills/` | Project workflows and supporting authoring skills. |
+| `.local/` | Ignored local plans, source snapshots, and temporary analysis files. |
+
+## Maintain the library
+
+| Workflow | Responsibility |
+| --- | --- |
+| [library-catalog](.agents/skills/library-catalog/SKILL.md) | Analyze a source and create its report, source overview, and catalog entry. |
+| [library-security-review](.agents/skills/library-security-review/SKILL.md) | Independently inspect the recorded source version and add security evidence and risk. |
+| [library-curator](.agents/skills/library-curator/SKILL.md) | Review evidence, consistency, links, and agreement across the library. |
+
+The skills contain the procedures and report template. Follow [AGENTS.md](AGENTS.md) for local working files and source handling.

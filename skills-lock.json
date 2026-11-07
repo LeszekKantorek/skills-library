@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "context-compile": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-compile/SKILL.md",
+      "computedHash": "a7110e80a6643afc77532ff1b1ea5124e8dd2c43a5bab5f141d3d8fc2cdf08ba"
+    },
+    "context-diagnose": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-diagnose/SKILL.md",
+      "computedHash": "a219adb643cae60b452dae8cf5414927406ce9b6e6890f8a5dc4444654837071"
+    },
+    "context-maintain": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-maintain/SKILL.md",
+      "computedHash": "6c23f48460ae1ddb65ae5d323c3c46701cb3b58b98fe4c4a0592312e1cdd206d"
+    },
+    "context-map": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-map/SKILL.md",
+      "computedHash": "aba446a50de470e2a5738093030f09baf053e1a1b3502a6ebc0a5cba677061d8"
+    },
+    "context-preserve": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-preserve/SKILL.md",
+      "computedHash": "e86213439758d65a9acc9558a614ca4b21c462028d3de61524d617e72d0150e9"
+    },
+    "context-retrieve": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-retrieve/SKILL.md",
+      "computedHash": "4656878c7f121b3165775bf025b12b3872aa1e881b1065b53ce78434c8b8265d"
+    },
+    "context-review-sessions": {
+      "source": "LeszekKantorek/context-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-review-sessions/SKILL.md",
+      "computedHash": "ab8010c965a4ad7efd98d72d312a5c656608a49a786c0364e08517611eaded88"
+    },
+    "procedural-skill-creator": {
+      "source": "LeszekKantorek/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/procedural-skill-creator/SKILL.md",
+      "computedHash": "cad7c692425bdc8a5f12264db009814d0e8b1ee424f899e1d45ea8da105dfb98"
+    },
+    "technical-writing-rules": {
+      "source": "LeszekKantorek/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/technical-writing-rules/SKILL.md",
+      "computedHash": "22c32169c1626fed6169423f7f11b8fb6c91044c06e474788bd8da2556e97961"
+    }
+  }
+}
