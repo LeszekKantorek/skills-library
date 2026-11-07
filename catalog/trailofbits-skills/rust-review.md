@@ -34,8 +34,10 @@ The **agent workflow** has different effects. The [skill](https://github.com/tra
 
 **Risk: high** for the overall workflow under the library's rules, based on deletion, broad shell and file access, and potential exposure of sensitive source through the host. This is not a finding that the Python helpers are malicious. Restrict access to authorized code, inspect permissions and control output handling.
 
-Assessment is **partial**, confidence limited: the full prompt corpus, all code paths, host, model provider, dependencies, installer, shell environment and tests have not been independently assessed. No claim is made that those components are safe. Named agent execution and Codex tool mapping remain unverified.
+The [worker protocol](https://github.com/trailofbits/skills/blob/e4dd0bb5b15535f7c5a0834187dffba6ac37e4ff/plugins/rust-review/agents/rust-review-worker.md) allows a hard-cap truncation to be recorded as `cleared (NOT SEARCHED ...)` while signaling truncation separately. A passing artifact check is therefore not sufficient evidence that every pass was searched; check the run summary and worker truncation markers before interpreting coverage.
+
+Assessment is **partial**, with moderate confidence for the local helper behavior and lower confidence for agent and host behavior. The separately versioned `uv`, installer, model provider and host are outside the assessed commit; runtime permissions and data handling depend on their configuration. Named agent execution and Codex tool mapping remain unverified.
 
 ## Validation
 
-Statically inspected the pinned README, skill architecture and retry procedure, plugin manifest, file inventory, Python metadata, and imports and file operations of the three runtime helpers. No installer, script, tests or audit was executed. Further security review of the complete plugin is needed.
+Independently fetched the pinned commit into `.local/` and verified its 86 tracked plugin files. Inspected the skill, agent protocols, prompt inventory, runtime helper imports and file operations, test modules, manifests and metadata; searched the prompt corpus for security-relevant operations. Ran the five upstream Python test modules with Python 3.14.7 and pytest 9.1.1, automatic plugin loading and bytecode disabled and temporary files under `.local/`: **87 passed**. No installer or end-to-end agent audit was run. The test suite does not establish host compatibility or complete detection coverage.

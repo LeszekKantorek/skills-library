@@ -24,4 +24,4 @@ The skill directs the agent to write Rust code and tests and run `cargo test` an
 
 ## Validation
 
-Statically inspected the pinned instruction, source README and file inventory. Eval content, installation, generated code and Cargo commands were not executed; external tools and dependencies were not assessed.
+Independently fetched the pinned commit and inspected the skill instruction, eval inventory, fixture placement scripts and source README. The eval scripts copy fixture files into the current directory and were not executed. Installation, generated code and Cargo commands were not executed; external tools and dependencies were not assessed.

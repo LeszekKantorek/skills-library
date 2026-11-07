@@ -24,4 +24,4 @@ Requests editing Rust and running `cargo fmt`, `cargo clippy --all-targets --all
 
 ## Validation
 
-Statically inspected the pinned instruction, source README and file inventory. Eval content, installation, generated code and Cargo commands were not executed; external tools and dependencies were not assessed.
+Independently fetched the pinned commit and inspected the skill instruction, six reference files, eval inventory, fixture placement scripts and source README. The eval scripts copy fixture files into the current directory and were not executed. Installation, generated code and Cargo commands were not executed; external tools and dependencies were not assessed.
