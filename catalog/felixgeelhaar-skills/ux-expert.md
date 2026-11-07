@@ -1,0 +1,36 @@
+# ux-expert
+
+## Identity and versions
+
+* Identifier: `felixgeelhaar-skills-ux-expert`; author: Felix Geelhaar; type: skill. Scope: [ux-expert/SKILL.md](https://github.com/felixgeelhaar/skills/blob/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447/ux-expert/SKILL.md), a single instruction file in [the repository](https://github.com/felixgeelhaar/skills).
+* Catalog analysis: [5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447](https://github.com/felixgeelhaar/skills/commit/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447), 2026-11-07. The file's Git blob is `8a9ae4229fb9147c495b34ade11868ecdb1dda4a`.
+* Latest observed: [5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447](https://github.com/felixgeelhaar/skills/commit/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447), `main`, observed 2026-11-07 through the [branch API](https://api.github.com/repos/felixgeelhaar/skills/branches/main). The head equals the analyzed commit, so the item is unchanged at the observed head.
+* Security assessment: `5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447`, 2026-11-07; operational risk: medium; completeness: partial.
+
+## Purpose and contents
+
+The [prompt](https://github.com/felixgeelhaar/skills/blob/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447/ux-expert/SKILL.md#L9) addresses ux research and usability reviews. It is intended for design teams reviewing usability, accessibility, and interfaces. It is less suitable for a certified accessibility audit or automatic design changes. These uses describe the source; the effectiveness and factual claims have not been tested.
+
+The pinned [recursive tree](https://api.github.com/repos/felixgeelhaar/skills/git/trees/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447?recursive=1) contains one Markdown instruction file in the item directory. It contains the prompt and examples, with no item-local scripts, tests/evals, hooks, agent manifests, MCP configuration, or assets. It references companion skills, which are outside this assessment. The repository's installation example is separate from later prompt use; the item bundles no installer dependency.
+
+## Installation
+
+See the [shared upstream installation instructions and warning](README.md#installation). The documented Claude Code command installs all matching skills from a moving branch and can overwrite user-level files.
+
+## License
+
+The [repository MIT license](README.md#license) applies to this item. The pinned tree has no separate item license, and no different notice was identified in the skill. Rights in third-party quotations and frameworks were not independently cleared.
+
+## Security
+
+Assessment: static security pass of the pinned item file and tree and repository installation example, at commit `5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447`, 2026-11-07. Completeness is **partial** and confidence is moderate for visible instructions and limited for runtime effects. The host, companion skills, Git, shell utilities, providers, and separately configured integrations are outside scope and unassessed.
+
+* The [frontmatter](https://github.com/felixgeelhaar/skills/blob/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447/ux-expert/SKILL.md#L1) declares `Read`, `Glob`, `Grep`, `WebSearch`, `WebFetch`, Scout navigation, screenshot, text, observation and scrolling, and Figma design-context and screenshot tools. Local reads can place accessible files in host context. Search queries go to the search provider, and fetched URLs go to the provider and destination. A retrieved page could contain instructions intended to redirect the agent; use public or anonymized queries and treat fetched content as data. Recipients, retention, and host enforcement are unknown. Tool declarations do not establish host enforcement.
+* The [working modes](https://github.com/felixgeelhaar/skills/blob/5a2e3ad8d9f7ddbfd15df295ede6c484dfbd6447/ux-expert/SKILL.md#L31) establish the item-specific scenario: The UX workflow inspects interfaces and accessibility. Scout screenshots and Figma context tools can expose page or design content to separately configured integrations; their permissions and recipients are unverified.
+* No fixed exfiltration endpoint, secret collection instruction, executable shell command, or automatic publication was identified in the item file. The installation example clones the whole repository from a moving branch and can overwrite user-level files; it was not run. Inspect the source and target paths before use.
+
+**Risk: medium.** The declared tools permit local reads and network research. A query can disclose information selected by the host or user. Review the prompt, restrict host access to the task, and review consequential outputs and actions. This rating is not a safety guarantee. Actual tool enforcement, provider behavior, companion skills, and quality of advice remain unverified.
+
+## Validation
+
+Documented: the pinned README's installation instructions. Static verification: fetched the complete pinned item through GitHub contents and raw endpoints, inspected the pinned tree, README, license, and observed branch, and compared the two item responses; inspected the prompt and installation separately. The [legacy import report](../../imports/felixgeelhaar-skills-ux-expert.md) records the earlier import and its scope. No upstream instructions, installer, declared tools, or domain-quality tests were executed; runtime behavior remains unverified.
