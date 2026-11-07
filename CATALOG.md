@@ -64,3 +64,7 @@ These reports describe upstream sources and a security assessment at a pinned co
 | [jurgendn/agent-skills](https://github.com/jurgendn/agent-skills) | [hypothesis-and-ablation-planner](catalog/jurgendn-agent-skills/hypothesis-and-ablation-planner.md) | Hypothesis and ablation planning | low |
 | [jurgendn/agent-skills](https://github.com/jurgendn/agent-skills) | [model-eval-error-analysis](catalog/jurgendn-agent-skills/model-eval-error-analysis.md) | Model evaluation and error analysis | medium |
 | [jurgendn/agent-skills](https://github.com/jurgendn/agent-skills) | [pytorch-training-recipe](catalog/jurgendn-agent-skills/pytorch-training-recipe.md) | Staged PyTorch training plans | medium |
+| [morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust) | [rust-best-practices](catalog/morganlinton-beautifulrust/rust-best-practices.md) | Writing and refactoring idiomatic Rust | medium |
+| [morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust) | [rust-review](catalog/morganlinton-beautifulrust/rust-review.md) | Reviewing Rust code and APIs | medium |
+| [morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust) | [rust-port](catalog/morganlinton-beautifulrust/rust-port.md) | Porting existing code to Rust | medium |
+| [trailofbits/skills](https://github.com/trailofbits/skills) | [rust-review](catalog/trailofbits-skills/rust-review.md) | Multi-agent Rust security review | high |
